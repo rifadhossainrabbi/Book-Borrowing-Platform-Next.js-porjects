@@ -24,7 +24,7 @@ const Footer = () => {
     </>
   );
   return (
-    <div className="bg-[#011732] text-white px-15 w-10/12 mx-auto mb-12">
+    <div className="bg-[#011732] text-white px-15">
       {/* Right side logo and social links */}
       <div className="flex justify-between mb-4 mt-10">
         <div className="space-y-4">

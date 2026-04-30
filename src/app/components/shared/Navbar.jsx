@@ -6,13 +6,13 @@ const Navbar = () => {
   const navItems = (
     <>
       <li>
-        <Link href={"/"}>Home</Link>
+        <Link href={'/'}>Home</Link>
       </li>
       <li>
-        <Link href={"/all-books"}>All Books</Link>
+        <Link href={'/all-books'}>All Books</Link>
       </li>
       <li>
-        <Link href={"my-profile"}>My Profile</Link>
+        <Link href={'my-profile'}>My Profile</Link>
       </li>
     </>
   );
@@ -45,7 +45,7 @@ const Navbar = () => {
             </ul>
           </div>
           <Link href={'/'}>
-            <button className='btn bg-transparent border-none shadow-none'>
+            <button className="btn bg-transparent border-none shadow-none">
               <Image src={NavImage} alt="NavLogo" />
             </button>
           </Link>
@@ -56,8 +56,14 @@ const Navbar = () => {
         <div className="navbar-end flex gap-2">
           {/* <Image src={"/"} alt='User'/> */}
           <p>Rifad</p>
-          <button className='btn bg-amber-400 border-none px-4 text-xl'>Login</button>
-          <button className='btn bg-amber-400 border-none px-4 text-xl'>Logout</button>
+          <Link href={"/login"}>
+            <button className="btn bg-amber-400 border-none px-4 text-xl">
+              Login
+            </button>
+          </Link>
+          <button className="btn bg-amber-400 border-none px-4 text-xl">
+            Logout
+          </button>
         </div>
       </div>
     </div>

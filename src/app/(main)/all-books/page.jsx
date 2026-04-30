@@ -1,12 +1,11 @@
 import BooksCard from '@/app/components/homepage/BooksCard';
+import { getBooks } from '@/app/lib/data';
 import React from 'react';
 
 const AllBooksPage = async () => {
-  const res = await fetch(
-    'https://book-borrowing-platform-next-js-por.vercel.app/data.json',
-    { cache: 'no-store' },
-  );
-  const books = await res.json();
+
+  const books = await getBooks();
+  console.log(books);
   return (
     <div className="grid grid-cols-12 w-10/12 mx-auto">
       {/* category selection */}

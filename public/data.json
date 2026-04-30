@@ -3,7 +3,7 @@
     "id": 1,
     "title": "The Alchemist",
     "author": "Paulo Coelho",
-    "description": "A global phenomenon, this story follows a young shepherd's journey to find his destiny.",
+    "description": "A timeless novel about Santiago, a young shepherd who journeys for treasure. Along the way, he learns destiny, courage, and self-discovery. A story about following dreams and trusting life.",
     "category": "Story",
     "available_quantity": 25,
     "image_url": "https://i.ibb.co.com/pBJZcBFv/The-alchemist.webp"
@@ -12,7 +12,7 @@
     "id": 2,
     "title": "Atomic Habits",
     "author": "James Clear",
-    "description": "A scientific guide to building good habits and breaking bad ones through tiny changes.",
+    "description": "A practical guide to building good habits through small daily changes. James Clear explains how tiny improvements create big results. Full of useful strategies for growth.",
     "category": "Science",
     "available_quantity": 40,
     "image_url": "https://i.ibb.co.com/0yRVDvGy/Atomics-habits.jpg"
@@ -21,7 +21,7 @@
     "id": 3,
     "title": "The Silent Patient",
     "author": "Alex Michaelides",
-    "description": "A shocking psychological thriller about a woman's act of violence and her refusal to speak.",
+    "description": "A gripping thriller about Alicia, who kills her husband and never speaks again. A therapist becomes obsessed with her silence. Full of suspense and shocking twists.",
     "category": "Story",
     "available_quantity": 12,
     "image_url": "https://i.ibb.co.com/hJj5Dn6q/The-Silent-Patient.png"
@@ -30,7 +30,7 @@
     "id": 4,
     "title": "The Power of Habit",
     "author": "Charles Duhigg",
-    "description": "Explores the science of habit formation and how it affects our lives and businesses.",
+    "description": "This book explains why habits form and how they can change. It introduces the cue-routine-reward loop clearly. Great for improving life and productivity.",
     "category": "Science",
     "available_quantity": 18,
     "image_url": "https://i.ibb.co.com/KxvBJ96G/The-power-of-habit.jpg"
@@ -39,7 +39,7 @@
     "id": 5,
     "title": "Sapiens: A Brief History of Humankind",
     "author": "Yuval Noah Harari",
-    "description": "A deep dive into how biology and history have defined human civilization.",
+    "description": "A fascinating history of humans from ancient times to today. Explores culture, science, and ideas that shaped the world. Thought-provoking and insightful.",
     "category": "Science",
     "available_quantity": 30,
     "image_url": "https://i.ibb.co.com/rGTnvGZv/Sapienswebp.webp"
@@ -48,7 +48,7 @@
     "id": 6,
     "title": "A Brief History of Time",
     "author": "Stephen Hawking",
-    "description": "An essential guide to the origins of the universe and the nature of time.",
+    "description": "Stephen Hawking explains space, time, black holes, and the Big Bang simply. Makes complex science easy to enjoy. A classic for curious readers.",
     "category": "Science",
     "available_quantity": 15,
     "image_url": "https://i.ibb.co.com/j9jRBGn6/A-brief-history-of-time.jpg"
@@ -57,7 +57,7 @@
     "id": 7,
     "title": "Thinking, Fast and Slow",
     "author": "Daniel Kahneman",
-    "description": "A psychological exploration of the two systems that drive our decision-making.",
+    "description": "Explains how the mind uses fast and slow thinking systems. Reveals common biases in judgment. Helpful for smarter decisions.",
     "category": "Science",
     "available_quantity": 22,
     "image_url": "https://i.ibb.co.com/j1ctF0j/Thinking-fast-and-slow.jpg"
@@ -66,7 +66,7 @@
     "id": 8,
     "title": "Clean Code",
     "author": "Robert C. Martin",
-    "description": "A fundamental book for software developers to write better and maintainable code.",
+    "description": "A famous programming book about writing clean and readable code. Shares best practices with examples. Essential for serious developers.",
     "category": "Tech",
     "available_quantity": 10,
     "image_url": "https://i.ibb.co.com/VpSFP4pC/Clean-code.jpg"
@@ -75,7 +75,7 @@
     "id": 9,
     "title": "Eloquent JavaScript",
     "author": "Marijn Haverbeke",
-    "description": "A modern and deep introduction to programming using the JavaScript language.",
+    "description": "An engaging guide to JavaScript and modern programming concepts. Covers functions, DOM, async coding, and Node.js. Great for learners.",
     "category": "Tech",
     "available_quantity": 20,
     "image_url": "https://i.ibb.co.com/Z6R2w4TS/Eloquent-Javascript.jpg"
@@ -84,7 +84,7 @@
     "id": 10,
     "title": "1984",
     "author": "George Orwell",
-    "description": "A classic dystopian story about surveillance, control, and individual freedom.",
+    "description": "A powerful dystopian novel about surveillance and oppression. Winston Smith secretly rebels against the regime. A warning about freedom and truth.",
     "category": "Story",
     "available_quantity": 35,
     "image_url": "https://i.ibb.co.com/4ZP40LTc/1984-book.webp"
@@ -93,7 +93,7 @@
     "id": 11,
     "title": "Python Crash Course",
     "author": "Eric Matthes",
-    "description": "A hands-on, project-based introduction to programming with Python.",
+    "description": "A beginner-friendly guide to learning Python with practice. Covers basics and real-world projects. Perfect for starting coding.",
     "category": "Tech",
     "available_quantity": 14,
     "image_url": "https://i.ibb.co.com/DPsR6PCQ/python-Crashcourse.jpg"
@@ -102,7 +102,7 @@
     "id": 12,
     "title": "Deep Learning",
     "author": "Ian Goodfellow",
-    "description": "An academic and practical guide to the field of Artificial Intelligence and Neural Networks.",
+    "description": "A complete textbook on deep learning by leading AI researchers. Covers math, neural networks, and advanced models. Best for serious learners.",
     "category": "Tech",
     "available_quantity": 8,
     "image_url": "https://i.ibb.co.com/3Y4xwWJb/Deep-Learning.jpg"

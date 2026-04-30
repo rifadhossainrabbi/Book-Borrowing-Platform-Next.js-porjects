@@ -27,7 +27,7 @@ const BooksCard = ({ book }) => {
         </div>
 
         <div className="mt-auto pt-3">
-          <Link href={'/'}>
+          <Link href={`/all-books/${book.id}`}>
             <button className="btn bg-[#011732] hover:bg-[#011732]/90 w-full text-white rounded-md py-2">
               View Details <FaArrowRight />
             </button>
