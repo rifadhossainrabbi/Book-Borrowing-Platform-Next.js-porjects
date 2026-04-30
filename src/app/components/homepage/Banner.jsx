@@ -1,6 +1,6 @@
 
-import { Roboto_Slab } from 'next/font/google';
 import { FaArrowRight } from 'react-icons/fa';
+import { Roboto_Slab } from 'next/font/google';
 
 const robotoslab = Roboto_Slab({
   subsets: ['latin'],
