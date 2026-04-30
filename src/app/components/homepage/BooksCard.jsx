@@ -14,7 +14,7 @@ const BooksCard = ({ book }) => {
           alt={book.title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover rounded-xl"
+          className="object-cover rounded-xl outline-1 outline-green-300"
         />
       </div>
 
