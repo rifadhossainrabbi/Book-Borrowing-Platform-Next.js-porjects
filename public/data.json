@@ -3,7 +3,7 @@
     "id": 1,
     "title": "The Alchemist",
     "author": "Paulo Coelho",
-    "description": "A timeless novel about Santiago, a young shepherd who journeys for treasure. Along the way, he learns destiny, courage, and self-discovery. A story about following dreams and trusting life.",
+    "description": "A global phenomenon and modern classic, this enchanting story follows Santiago, a young Andalusian shepherd, on a transformative journey across the deserts of Africa to find a worldly treasure. Along the way, he encounters a series of mysterious guides — including an ancient king and a wise alchemist — who teach him to listen to his heart and follow the signs of the universe. At its core, this is a timeless tale about courage, destiny, and the pursuit of one's Personal Legend.",
     "category": "Story",
     "available_quantity": 25,
     "image_url": "https://i.ibb.co.com/pBJZcBFv/The-alchemist.webp"
@@ -12,7 +12,7 @@
     "id": 2,
     "title": "Atomic Habits",
     "author": "James Clear",
-    "description": "A practical guide to building good habits through small daily changes. James Clear explains how tiny improvements create big results. Full of useful strategies for growth.",
+    "description": "A groundbreaking, science-backed guide to understanding how habits work and how to harness them for lasting change. James Clear argues that it is not dramatic transformation but tiny, consistent 1% improvements that compound into remarkable results over time. Through engaging stories and practical frameworks — including the habit loop, the two-minute rule, and identity-based habits — this book gives you a proven system to build good habits, break bad ones, and master the small behaviors that lead to extraordinary outcomes.",
     "category": "Science",
     "available_quantity": 40,
     "image_url": "https://i.ibb.co.com/0yRVDvGy/Atomics-habits.jpg"
@@ -21,7 +21,7 @@
     "id": 3,
     "title": "The Silent Patient",
     "author": "Alex Michaelides",
-    "description": "A gripping thriller about Alicia, who kills her husband and never speaks again. A therapist becomes obsessed with her silence. Full of suspense and shocking twists.",
+    "description": "A masterfully crafted psychological thriller that grips you from the very first page. Alicia Berenson, a celebrated painter living a seemingly perfect life in London, shoots her husband five times in the face — and then never speaks another word. Her silence becomes an obsession for Theo Faber, a criminal psychotherapist determined to uncover her motive. As he digs deeper into Alicia's past, the line between healer and patient begins to blur. The shocking, jaw-dropping twist will leave you breathless.",
     "category": "Story",
     "available_quantity": 12,
     "image_url": "https://i.ibb.co.com/hJj5Dn6q/The-Silent-Patient.png"
@@ -30,7 +30,7 @@
     "id": 4,
     "title": "The Power of Habit",
     "author": "Charles Duhigg",
-    "description": "This book explains why habits form and how they can change. It introduces the cue-routine-reward loop clearly. Great for improving life and productivity.",
+    "description": "Drawing on cutting-edge neuroscience and psychology research, Pulitzer Prize-winning journalist Charles Duhigg reveals why habits exist and how they can be changed. Through captivating real-world stories — from athletes and corporate executives to civil rights leaders — he shows that the key to transforming any habit lies in understanding the simple neurological loop: cue, routine, reward. Whether you want to improve your health, boost productivity, or reshape your organization, this book delivers the science and tools to make change stick.",
     "category": "Science",
     "available_quantity": 18,
     "image_url": "https://i.ibb.co.com/KxvBJ96G/The-power-of-habit.jpg"
@@ -39,7 +39,7 @@
     "id": 5,
     "title": "Sapiens: A Brief History of Humankind",
     "author": "Yuval Noah Harari",
-    "description": "A fascinating history of humans from ancient times to today. Explores culture, science, and ideas that shaped the world. Thought-provoking and insightful.",
+    "description": "A bold and sweeping narrative that challenges everything you thought you knew about being human. Yuval Noah Harari takes us on a journey from the Stone Age to the Silicon Age, exploring how Homo sapiens came to dominate the planet through the power of shared myths, language, and collective imagination. Covering revolutions in cognition, agriculture, science, and industry, this remarkable book asks profound questions: Are we happier than our ancestors? What will become of us in the age of AI and genetic engineering? A must-read for anyone curious about our past — and our future.",
     "category": "Science",
     "available_quantity": 30,
     "image_url": "https://i.ibb.co.com/rGTnvGZv/Sapienswebp.webp"
@@ -48,7 +48,7 @@
     "id": 6,
     "title": "A Brief History of Time",
     "author": "Stephen Hawking",
-    "description": "Stephen Hawking explains space, time, black holes, and the Big Bang simply. Makes complex science easy to enjoy. A classic for curious readers.",
+    "description": "One of the most iconic popular science books ever written, this masterpiece by the legendary physicist Stephen Hawking takes readers on an awe-inspiring journey through the cosmos. From the Big Bang and black holes to the arrow of time and the nature of the universe, Hawking explains the most complex ideas in physics with remarkable clarity and wit — without a single complex equation. Whether you're a science enthusiast or a curious beginner, this book will forever change the way you look at space, time, and your place in the universe.",
     "category": "Science",
     "available_quantity": 15,
     "image_url": "https://i.ibb.co.com/j9jRBGn6/A-brief-history-of-time.jpg"
@@ -57,7 +57,7 @@
     "id": 7,
     "title": "Thinking, Fast and Slow",
     "author": "Daniel Kahneman",
-    "description": "Explains how the mind uses fast and slow thinking systems. Reveals common biases in judgment. Helpful for smarter decisions.",
+    "description": "A landmark work from Nobel Prize-winning psychologist Daniel Kahneman that fundamentally reshapes how we understand the human mind. Kahneman introduces two systems of thought: System 1, which is fast, intuitive, and emotional, and System 2, which is slow, deliberate, and logical. Through decades of groundbreaking research, he reveals the cognitive biases and mental shortcuts that lead us astray — in business decisions, relationships, and everyday judgments. Rich with practical insights, this book will make you smarter about how you think — and when not to trust your own instincts.",
     "category": "Science",
     "available_quantity": 22,
     "image_url": "https://i.ibb.co.com/j1ctF0j/Thinking-fast-and-slow.jpg"
@@ -66,7 +66,7 @@
     "id": 8,
     "title": "Clean Code",
     "author": "Robert C. Martin",
-    "description": "A famous programming book about writing clean and readable code. Shares best practices with examples. Essential for serious developers.",
+    "description": "Widely regarded as one of the most important books in software engineering, Clean Code is a must-read for every professional developer. Robert C. Martin — known as Uncle Bob — presents timeless principles and best practices for writing code that is not just functional, but readable, maintainable, and elegant. Through dozens of real-world code examples in Java, the book teaches you how to name variables meaningfully, write concise functions, manage complexity, and refactor messy legacy code. If you care about your craft as a developer, this book will elevate your standards permanently.",
     "category": "Tech",
     "available_quantity": 10,
     "image_url": "https://i.ibb.co.com/VpSFP4pC/Clean-code.jpg"
@@ -75,7 +75,7 @@
     "id": 9,
     "title": "Eloquent JavaScript",
     "author": "Marijn Haverbeke",
-    "description": "An engaging guide to JavaScript and modern programming concepts. Covers functions, DOM, async coding, and Node.js. Great for learners.",
+    "description": "A richly written and intellectually stimulating introduction to the JavaScript programming language and modern software development. Marijn Haverbeke takes readers far beyond the basics, exploring functions, closures, higher-order programming, the browser DOM, asynchronous JavaScript, and Node.js through carefully crafted exercises and real projects. Unlike dry tutorials, this book challenges you to think deeply about programming as a discipline. Whether you're a beginner looking to build a solid foundation or an experienced developer wanting to master JavaScript's subtleties, this is an indispensable resource.",
     "category": "Tech",
     "available_quantity": 20,
     "image_url": "https://i.ibb.co.com/Z6R2w4TS/Eloquent-Javascript.jpg"
@@ -84,7 +84,7 @@
     "id": 10,
     "title": "1984",
     "author": "George Orwell",
-    "description": "A powerful dystopian novel about surveillance and oppression. Winston Smith secretly rebels against the regime. A warning about freedom and truth.",
+    "description": "George Orwell's chilling and prophetic dystopian novel remains one of the most powerful works of political fiction ever written. Set in a totalitarian superstate called Oceania, it follows Winston Smith — a low-ranking Party member who secretly harbors doubts about the oppressive regime of Big Brother. As Winston dares to seek truth and love in a world of perpetual surveillance, propaganda, and thought control, his quiet rebellion leads him into devastating danger. Eerily relevant in the age of mass surveillance and fake news, 1984 is a haunting warning about the fragility of freedom and truth.",
     "category": "Story",
     "available_quantity": 35,
     "image_url": "https://i.ibb.co.com/4ZP40LTc/1984-book.webp"
@@ -93,7 +93,7 @@
     "id": 11,
     "title": "Python Crash Course",
     "author": "Eric Matthes",
-    "description": "A beginner-friendly guide to learning Python with practice. Covers basics and real-world projects. Perfect for starting coding.",
+    "description": "The world's best-selling Python book for beginners, Python Crash Course offers a fast-paced and thoroughly practical introduction to programming with Python 3. The first half of the book covers the core language concepts — variables, lists, loops, functions, classes, and file handling — with clear explanations and hands-on exercises. The second half puts those skills to work in three complete real-world projects: a Pygame arcade game, a data visualization app using Matplotlib, and a web application with Django. Perfect for anyone who wants to learn Python quickly and start building real things right away.",
     "category": "Tech",
     "available_quantity": 14,
     "image_url": "https://i.ibb.co.com/DPsR6PCQ/python-Crashcourse.jpg"
@@ -102,7 +102,7 @@
     "id": 12,
     "title": "Deep Learning",
     "author": "Ian Goodfellow",
-    "description": "A complete textbook on deep learning by leading AI researchers. Covers math, neural networks, and advanced models. Best for serious learners.",
+    "description": "The definitive textbook on deep learning, co-authored by Ian Goodfellow, Yoshua Bengio, and Aaron Courville — three of the most prominent researchers in the field of artificial intelligence. This comprehensive volume covers the full spectrum of deep learning theory and practice: from the mathematical foundations of linear algebra and probability, to core architectures like convolutional networks and recurrent networks, to advanced topics like generative adversarial networks (GANs) and reinforcement learning. Essential reading for researchers, graduate students, and serious practitioners who want a rigorous and thorough understanding of modern AI.",
     "category": "Tech",
     "available_quantity": 8,
     "image_url": "https://i.ibb.co.com/3Y4xwWJb/Deep-Learning.jpg"
