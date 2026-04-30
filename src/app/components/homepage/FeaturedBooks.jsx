@@ -1,5 +1,8 @@
 import Image from 'next/image';
 import { Roboto_Slab } from 'next/font/google';
+import Link from 'next/link';
+import BooksCard from './BooksCard';
+import { FaArrowRight } from 'react-icons/fa';
 
 const robotoslab = Roboto_Slab({
   subsets: ['latin'],
@@ -11,37 +14,22 @@ const FeaturedBooks = async () => {
     { cache: 'no-store' },
   );
   const books = await res.json();
-  console.log(books, books.image_url);
 
   return (
     <div className="w-10/12 mx-auto p-7 bg-white">
-      <h1 className={`${robotoslab.className} text-2xl mb-3`}>
-        Featured Books
-      </h1>
+      <div className='flex justify-between'>
+        <h1 className={`${robotoslab.className} text-2xl mb-3`}>
+          Featured Books
+        </h1>
+        <Link href={"/all-books"}>
+          <span className='text-blue-500 flex items-center gap-1'>
+            View All <FaArrowRight />
+          </span>
+        </Link>
+      </div>
       <div className="grid grid-cols-4 gap-8">
         {books.slice(0, 4).map((book) => (
-          <div
-            key={book.id}
-            className="rounded-md p-3 border-0 shadow-md bg-gray-50">
-            <figure className="">
-              <Image
-                src={book.image_url}
-                width={200}
-                height={200}
-                alt={book.title}
-                className="rounded-xl object-cover w-full h-[450px]"
-              />
-            </figure>
-            <div className="p-3">
-              <h2 className="card-title text-green-500">{book.title}</h2>
-              <p>{book.author}</p>
-              <div className="card-actions">
-                <button className="btn bg-[#011732] w-full text-white rounded-md">
-                  view Details
-                </button>
-              </div>
-            </div>
-          </div>
+          <BooksCard book={book} key={book.id} />
         ))}
       </div>
     </div>

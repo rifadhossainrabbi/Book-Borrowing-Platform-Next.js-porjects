@@ -53,8 +53,11 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navItems}</ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end flex gap-2">
+          {/* <Image src={"/"} alt='User'/> */}
+          <p>Rifad</p>
           <button className='btn bg-amber-400 border-none px-4 text-xl'>Login</button>
+          <button className='btn bg-amber-400 border-none px-4 text-xl'>Logout</button>
         </div>
       </div>
     </div>
