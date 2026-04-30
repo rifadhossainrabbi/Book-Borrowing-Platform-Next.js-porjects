@@ -13,13 +13,13 @@ const FeaturedBooks = async () => {
       {books.slice(0, 4).map((book) => (
         <div key={book.id} className="card bg-base-100 w-96 shadow-sm">
           <figure className="px-10 pt-10">
-            <Image
+            {/* <Image
               src={book.image_url}
               width={300}
               height={400}
               alt={book.title}
               className="rounded-xl object-cover"
-            />
+            /> */}
           </figure>
           <div className="card-body items-center text-center">
             <h2 className="card-title">Card Title</h2>
