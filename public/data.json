@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "description": "A global phenomenon, this story follows a young shepherd's journey to find his destiny.",
+    "category": "Story",
+    "available_quantity": 25,
+    "image_url": "https://images.example.com/alchemist.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "description": "A scientific guide to building good habits and breaking bad ones through tiny changes.",
+    "category": "Science",
+    "available_quantity": 40,
+    "image_url": "https://images.example.com/atomic-habits.jpg"
+  },
+  {
+    "id": 3,
+    "title": "The Silent Patient",
+    "author": "Alex Michaelides",
+    "description": "A shocking psychological thriller about a woman's act of violence and her refusal to speak.",
+    "category": "Story",
+    "available_quantity": 12,
+    "image_url": "https://images.example.com/silent-patient.jpg"
+  },
+  {
+    "id": 4,
+    "title": "The Power of Habit",
+    "author": "Charles Duhigg",
+    "description": "Explores the science of habit formation and how it affects our lives and businesses.",
+    "category": "Science",
+    "available_quantity": 18,
+    "image_url": "https://images.example.com/habit.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Sapiens: A Brief History of Humankind",
+    "author": "Yuval Noah Harari",
+    "description": "A deep dive into how biology and history have defined human civilization.",
+    "category": "Science",
+    "available_quantity": 30,
+    "image_url": "https://images.example.com/sapiens.jpg"
+  },
+  {
+    "id": 6,
+    "title": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "description": "An essential guide to the origins of the universe and the nature of time.",
+    "category": "Science",
+    "available_quantity": 15,
+    "image_url": "https://images.example.com/brief-history.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "description": "A psychological exploration of the two systems that drive our decision-making.",
+    "category": "Science",
+    "available_quantity": 22,
+    "image_url": "https://images.example.com/thinking.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "description": "A fundamental book for software developers to write better and maintainable code.",
+    "category": "Tech",
+    "available_quantity": 10,
+    "image_url": "https://images.example.com/clean-code.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Eloquent JavaScript",
+    "author": "Marijn Haverbeke",
+    "description": "A modern and deep introduction to programming using the JavaScript language.",
+    "category": "Tech",
+    "available_quantity": 20,
+    "image_url": "https://images.example.com/eloquent-js.jpg"
+  },
+  {
+    "id": 10,
+    "title": "1984",
+    "author": "George Orwell",
+    "description": "A classic dystopian story about surveillance, control, and individual freedom.",
+    "category": "Story",
+    "available_quantity": 35,
+    "image_url": "https://images.example.com/1984.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Python Crash Course",
+    "author": "Eric Matthes",
+    "description": "A hands-on, project-based introduction to programming with Python.",
+    "category": "Tech",
+    "available_quantity": 14,
+    "image_url": "https://images.example.com/python-crash.jpg"
+  },
+  {
+    "id": 12,
+    "title": "Deep Learning",
+    "author": "Ian Goodfellow",
+    "description": "An academic and practical guide to the field of Artificial Intelligence and Neural Networks.",
+    "category": "Tech",
+    "available_quantity": 8,
+    "image_url": "https://images.example.com/deep-learning.jpg"
+  }
+]
