@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React from 'react';
+
 import NavImage from '../../assets/booknest-logo-navbar.png';
 import {
   FaFacebookSquare,

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Roboto_Slab } from 'next/font/google';
 import { FaArrowRight } from 'react-icons/fa';
 

@@ -6,7 +6,7 @@
     "description": "A global phenomenon, this story follows a young shepherd's journey to find his destiny.",
     "category": "Story",
     "available_quantity": 25,
-    "image_url": "https://images.example.com/alchemist.jpg"
+    "image_url": "https://i.ibb.co.com/pBJZcBFv/The-alchemist.webp"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "description": "A scientific guide to building good habits and breaking bad ones through tiny changes.",
     "category": "Science",
     "available_quantity": 40,
-    "image_url": "https://images.example.com/atomic-habits.jpg"
+    "image_url": "https://i.ibb.co.com/0yRVDvGy/Atomics-habits.jpg"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "description": "A shocking psychological thriller about a woman's act of violence and her refusal to speak.",
     "category": "Story",
     "available_quantity": 12,
-    "image_url": "https://images.example.com/silent-patient.jpg"
+    "image_url": "https://i.ibb.co.com/hJj5Dn6q/The-Silent-Patient.png"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "description": "Explores the science of habit formation and how it affects our lives and businesses.",
     "category": "Science",
     "available_quantity": 18,
-    "image_url": "https://images.example.com/habit.jpg"
+    "image_url": "https://i.ibb.co.com/KxvBJ96G/The-power-of-habit.jpg"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "description": "A deep dive into how biology and history have defined human civilization.",
     "category": "Science",
     "available_quantity": 30,
-    "image_url": "https://images.example.com/sapiens.jpg"
+    "image_url": "https://i.ibb.co.com/rGTnvGZv/Sapienswebp.webp"
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "description": "An essential guide to the origins of the universe and the nature of time.",
     "category": "Science",
     "available_quantity": 15,
-    "image_url": "https://images.example.com/brief-history.jpg"
+    "image_url": "https://i.ibb.co.com/j9jRBGn6/A-brief-history-of-time.jpg"
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "description": "A psychological exploration of the two systems that drive our decision-making.",
     "category": "Science",
     "available_quantity": 22,
-    "image_url": "https://images.example.com/thinking.jpg"
+    "image_url": "https://i.ibb.co.com/j1ctF0j/Thinking-fast-and-slow.jpg"
   },
   {
     "id": 8,
@@ -69,7 +69,7 @@
     "description": "A fundamental book for software developers to write better and maintainable code.",
     "category": "Tech",
     "available_quantity": 10,
-    "image_url": "https://images.example.com/clean-code.jpg"
+    "image_url": "https://i.ibb.co.com/VpSFP4pC/Clean-code.jpg"
   },
   {
     "id": 9,
@@ -78,7 +78,7 @@
     "description": "A modern and deep introduction to programming using the JavaScript language.",
     "category": "Tech",
     "available_quantity": 20,
-    "image_url": "https://images.example.com/eloquent-js.jpg"
+    "image_url": "https://i.ibb.co.com/Z6R2w4TS/Eloquent-Javascript.jpg"
   },
   {
     "id": 10,
@@ -87,7 +87,7 @@
     "description": "A classic dystopian story about surveillance, control, and individual freedom.",
     "category": "Story",
     "available_quantity": 35,
-    "image_url": "https://images.example.com/1984.jpg"
+    "image_url": "https://i.ibb.co.com/4ZP40LTc/1984-book.webp"
   },
   {
     "id": 11,
@@ -96,7 +96,7 @@
     "description": "A hands-on, project-based introduction to programming with Python.",
     "category": "Tech",
     "available_quantity": 14,
-    "image_url": "https://images.example.com/python-crash.jpg"
+    "image_url": "https://i.ibb.co.com/DPsR6PCQ/python-Crashcourse.jpg"
   },
   {
     "id": 12,
@@ -105,6 +105,6 @@
     "description": "An academic and practical guide to the field of Artificial Intelligence and Neural Networks.",
     "category": "Tech",
     "available_quantity": 8,
-    "image_url": "https://images.example.com/deep-learning.jpg"
+    "image_url": "https://i.ibb.co.com/3Y4xwWJb/Deep-Learning.jpg"
   }
 ]
