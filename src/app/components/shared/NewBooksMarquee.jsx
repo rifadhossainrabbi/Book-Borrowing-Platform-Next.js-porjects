@@ -10,29 +10,25 @@ const news = [
 
 const NewBooksMarquee = () => {
   return (
-    <div className="flex justify-between items-center gap-4 bg-gray-100 py-3 w-11/12 md:w-10/12 mx-auto px-4  shadow-sm border border-gray-300 ">
-      {/* Label Button */}
-      <button className="btn text-black text-2xl border-none  px-6 font-bold">
+    <div className="flex justify-between items-center gap-2 md:gap-4 bg-[#fdf4ebc3] py-2 md:py-3 w-full md:w-10/12 mx-auto px-2 md:px-4 shadow-sm">
+      <button className="btn text-black text-sm sm:text-lg md:text-2xl border-none px-2 md:px-6 font-bold whitespace-nowrap min-h-0 h-auto bg-transparent">
         🎉New Arrivals:
       </button>
 
-      {/* Marquee Content */}
       <Marquee pauseOnHover={true} speed={80} gradient={false}>
         {news.map((n) => (
           <div key={n._id} className="flex items-center">
-            <span className="text-gray-800 font-medium text-lg cursor-pointer hover:text-red-600 transition-colors">
+            <span className="text-gray-800 font-medium text-sm md:text-lg cursor-pointer hover:text-red-600 transition-colors">
               {n.title}
             </span>
-            {/* Separator */}
-            <span className="mx-8 text-gray-400 font-bold">|</span>
+            <span className="mx-4 md:mx-8 text-gray-400 font-bold">|</span>
           </div>
         ))}
 
-        {/* discount message */}
-        <span className="text-blue-700 font-bold text-lg mr-8">
+        <span className="text-blue-700 font-bold text-sm md:text-lg mr-4 md:mr-8">
           🔥 Special Discount on Memberships! Join Now and get 20% off...
         </span>
-        <span className="mx-8 text-gray-400 font-bold">|</span>
+        <span className="mx-4 md:mx-8 text-gray-400 font-bold">|</span>
       </Marquee>
     </div>
   );
