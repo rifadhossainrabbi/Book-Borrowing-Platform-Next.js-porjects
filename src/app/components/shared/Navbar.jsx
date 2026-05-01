@@ -8,6 +8,7 @@ import useAvatar from '../../assets/user.png';
 const Navbar = () => {
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
+  console.log(session, "Session from Navbar");
 
   const navItems = (
     <>
