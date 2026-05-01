@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import GoogleImage from '../../assets/google-logo.png';
+import Image from 'next/image';
 
 const LogInPage = () => {
   return (
@@ -32,6 +34,11 @@ const LogInPage = () => {
           </fieldset>
           <button className="btn w-full bg-slate-800 text-white">Login</button>
         </form>
+        <div className="divider">OR</div>
+        <button className="btn w-full font-semibold text-xl flex justify-center items-center gap-1 mx-auto">
+          <Image src={GoogleImage} alt="Google Logo" className="w-[25px]" />{' '}
+          Continue with Google
+        </button>
         <p className="mt-4">
           Don't have an account?{' '}
           <Link href={'/register'} className="text-blue-500">

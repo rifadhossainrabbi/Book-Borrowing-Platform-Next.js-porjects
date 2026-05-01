@@ -1,11 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-// import { FaGoogle } from 'react-icons/fa';
 import GoogleImage from '../../assets/google-logo.png'
 
 const RegisterPage = () => {
   return (
-    <div className="container mx-auto bg-slate-100 min-h-[80vh] flex justify-center items-center">
+    <div className="container mx-auto bg-slate-100 min-h-[70vh] flex justify-center items-center mt-10">
       <div className="p-6 rounded-xl bg-white w-full max-w-md">
         <h2 className="text-3xl font-bold text-center mb-6">
           Register your account
@@ -54,16 +53,6 @@ const RegisterPage = () => {
               />
             </div>
           </fieldset>
-
-          {/* Confirm Password (simple, no validation) */}
-          {/* <fieldset className="fieldset w-full">
-            <legend className="fieldset-legend">Confirm Password</legend>
-            <input
-              type="password"
-              className="input w-full"
-              placeholder="Re-type password"
-            />
-          </fieldset> */}
 
           {/* Button */}
           <button className="btn w-full bg-slate-800 text-white">
