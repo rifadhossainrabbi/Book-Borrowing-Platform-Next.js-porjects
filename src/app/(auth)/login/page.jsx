@@ -1,8 +1,28 @@
+'use client';
+
 import Link from 'next/link';
 import GoogleImage from '../../assets/google-logo.png';
 import Image from 'next/image';
+import { authClient } from '@/app/lib/auth-client';
 
 const LogInPage = () => {
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    const { data, error } = await authClient.signIn.email({
+      email,
+      password,
+      callbackURL: '/',
+    });
+    if (error) {
+      toast.error(error.message || 'Registration failed!');
+    } else {
+      toast.success('Registration successful!');
+    }
+  };
+
   return (
     <div className="container mx-auto bg-slate-100 min-h-[80vh] flex justify-center items-center">
       <div className="p-4 rounded-xl bg-white">
@@ -11,14 +31,16 @@ const LogInPage = () => {
         </h2>
 
         {/* handleSubmit ta onSubmit er moddhe boshbe r tar moddhe abar handleLoginFunc boshate hobe */}
-        <form className="space-y-4">
+        <form onSubmit={onSubmit} className="space-y-4">
           <fieldset className="fieldset">
             <legend className="fieldset-legend">Email</legend>
             {/* React hook from use koray name="email" ei tuku baad jabe */}
             <input
               type="email" //Email er akar na hole warning dibe
+              name='email'
               className="input"
               placeholder="Type here email"
+              required
             />
             {/* email er required fill na korel ei message dekhabe */}
           </fieldset>
@@ -26,8 +48,10 @@ const LogInPage = () => {
             <legend className="fieldset-legend">Password</legend>
             <input
               type="password"
+              name='password'
               className="input"
               placeholder="Type here password"
+              required
             />
             {/* password er required fill na korel ei message dekhabe */}
             {/* Eye icon a click korle password er type toggle hobe */}
