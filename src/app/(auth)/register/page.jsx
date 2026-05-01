@@ -1,27 +1,36 @@
 'use client';
+
+import React, { useState } from 'react'; 
 import Image from 'next/image';
 import Link from 'next/link';
-import GoogleImage from '../../assets/google-logo.png';
-import { authClient } from '@/app/lib/auth-client';
-import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
+import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { authClient } from '@/app/lib/auth-client';
+import GoogleImage from '../../assets/google-logo.png';
 
 const RegisterPage = () => {
-  // signUp a callbackUrl dawa jay na tai useRouter hook use kora hoyase
   const router = useRouter();
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    const name = e.target.name.value;
-    const image = e.target.image.value;
-    const email = e.target.email.value;
-    const password = e.target.password.value;
+  const [isShowPassword, setIsShowPassword] = useState(false);
 
-    const { data, error } = await authClient.signUp.email({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+
+  const handleRegisterFunc = async (data) => {
+    const { name, email, password, image } = data;
+
+    const { error } = await authClient.signUp.email({
       name,
       email,
       password,
       image,
     });
+
     if (error) {
       toast.error(error.message || 'Registration failed!');
     } else {
@@ -37,80 +46,113 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="container mx-auto bg-slate-100 min-h-[70vh] flex justify-center items-center mt-10">
-      <div className="p-6 rounded-xl bg-white w-full max-w-md">
+    <div className="container mx-auto bg-slate-100 min-h-[70vh] flex justify-center items-center mt-10 p-4">
+      <div className="p-6 rounded-xl bg-white w-full max-w-md shadow-md">
         <h2 className="text-3xl font-bold text-center mb-6">
           Register your account
         </h2>
 
-        <form onSubmit={onSubmit} className="space-y-4">
-          {/* Name */}
+
+        <form onSubmit={handleSubmit(handleRegisterFunc)} className="space-y-4">
+          {/* Name Field */}
           <fieldset className="fieldset w-full">
-            <legend className="fieldset-legend">Name</legend>
+            <legend className="fieldset-legend font-semibold">Name</legend>
             <input
               type="text"
-              name="name"
-              className="input w-full"
+              className={`input w-full ${errors.name ? 'border-red-500' : ''}`}
               placeholder="Type here Name"
-              required
+              {...register('name', { required: 'Name is required' })}
             />
+            {errors.name && (
+              <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+            )}
           </fieldset>
 
-          {/* Email */}
+          {/* email section */}
           <fieldset className="fieldset w-full">
-            <legend className="fieldset-legend">Email</legend>
+            <legend className="fieldset-legend font-semibold">Email</legend>
             <input
               type="email"
-              name="email"
-              className="input w-full"
+              className={`input w-full ${errors.email ? 'border-red-500' : ''}`}
               placeholder="Enter your email"
-              required
+              {...register('email', {
+                required: 'Email field is required',
+                pattern: {
+                  value: /^\S+@\S+$/i,
+                  message: 'Invalid email format',
+                },
+              })}
             />
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.email.message}
+              </p>
+            )}
           </fieldset>
 
-          {/* Photo */}
+          {/* Photo URL Field */}
           <fieldset className="fieldset w-full">
-            <legend className="fieldset-legend">Photo URL</legend>
+            <legend className="fieldset-legend font-semibold">Photo URL</legend>
             <input
               type="text"
-              name="image"
               className="input w-full"
               placeholder="Enter photo URL"
+              {...register('image')}
             />
           </fieldset>
 
-          {/* Password */}
-          <fieldset className="fieldset w-full">
-            <legend className="fieldset-legend">Password</legend>
-
+          {/* Password Field */}
+          <fieldset className="fieldset w-full relative">
+            <legend className="fieldset-legend font-semibold">Password</legend>
             <div className="relative">
               <input
-                type="password"
-                name="password"
-                className="input w-full pr-10"
+                type={isShowPassword ? 'text' : 'password'}
+                className={`input w-full pr-10 ${errors.password ? 'border-red-500' : ''}`}
                 placeholder="Type here password"
-                required
+                {...register('password', {
+                  required: 'Password field is required',
+                  minLength: {
+                    value: 6,
+                    message: 'Password must be at least 6 characters',
+                  },
+                })}
               />
+              <span
+                className="absolute right-3 top-3 cursor-pointer text-gray-500"
+                onClick={() => setIsShowPassword(!isShowPassword)}>
+                {isShowPassword ? (
+                  <FaEyeSlash size={18} />
+                ) : (
+                  <FaEye size={18} />
+                )}
+              </span>
             </div>
+            {errors.password && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.password.message}
+              </p>
+            )}
           </fieldset>
 
-          {/* Button */}
-          <button className="btn w-full bg-slate-800 text-white">
+          <button className="btn w-full bg-slate-800 text-white hover:bg-slate-700">
             Register
           </button>
         </form>
 
-        <div className="divider">OR</div>
+        <div className="divider text-gray-400">OR</div>
+
         <button
           onClick={handleGoogleSignIn}
-          className="btn w-full font-semibold text-xl flex justify-center items-center gap-1 mx-auto">
-          <Image src={GoogleImage} alt="Google Logo" className="w-[25px]" />{' '}
+          className="btn w-full font-semibold flex justify-center items-center gap-2 border border-gray-300 bg-white hover:bg-gray-50">
+          <Image src={GoogleImage} alt="Google Logo" className="w-[20px]" />{' '}
           Continue with Google
         </button>
 
-        <p className="mt-4 text-center">
+        <p className="mt-6 text-center text-sm">
           Do you have an account?{' '}
-          <Link href={'/login'} className="text-blue-500">
+          <Link
+            href={'/login'}
+            className="text-blue-500 font-bold hover:underline">
             Login
           </Link>
         </p>

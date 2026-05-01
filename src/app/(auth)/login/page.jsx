@@ -1,25 +1,35 @@
 'use client';
 
+import React, { useState } from 'react';
 import Link from 'next/link';
-import GoogleImage from '../../assets/google-logo.png';
 import Image from 'next/image';
 import { authClient } from '@/app/lib/auth-client';
+import { useForm } from 'react-hook-form';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import toast from 'react-hot-toast'; 
+import GoogleImage from '../../assets/google-logo.png';
 
 const LogInPage = () => {
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-    const { data, error } = await authClient.signIn.email({
-      email,
-      password,
+  const [isShowPassword, setIsShowPassword] = useState(false);
+
+  const handleLoginFunc = async (data) => {
+    const { data: res, error } = await authClient.signIn.email({
+      email: data.email,
+      password: data.password,
+      rememberMe: true,
       callbackURL: '/',
     });
+
     if (error) {
-      toast.error(error.message || 'Registration failed!');
+      toast.error(error.message || 'Login failed!');
     } else {
-      toast.success('Registration successful!');
+      toast.success('Login successful!');
     }
   };
 
@@ -30,51 +40,78 @@ const LogInPage = () => {
   };
 
   return (
-    <div className="container mx-auto bg-slate-100 min-h-[80vh] flex justify-center items-center">
-      <div className="p-4 rounded-xl bg-white">
+    <div className="container mx-auto bg-slate-100 min-h-[80vh] flex justify-center items-center p-4">
+      <div className="p-8 rounded-xl bg-white shadow-lg w-full max-w-md">
         <h2 className="text-3xl font-bold text-center mb-6">
           Login your account
         </h2>
 
-        {/* handleSubmit ta onSubmit er moddhe boshbe r tar moddhe abar handleLoginFunc boshate hobe */}
-        <form onSubmit={onSubmit} className="space-y-4">
+        <form className="space-y-4" onSubmit={handleSubmit(handleLoginFunc)}>
+          {/* Email field */}
           <fieldset className="fieldset">
-            <legend className="fieldset-legend">Email</legend>
-            {/* React hook from use koray name="email" ei tuku baad jabe */}
+            <legend className="fieldset-legend font-semibold">Email</legend>
             <input
-              type="email" //Email er akar na hole warning dibe
-              name="email"
-              className="input"
+              type="email"
+              className={`input w-full ${errors.email ? 'border-red-500' : ''}`}
               placeholder="Type here email"
-              required
+              {...register('email', { required: 'Email field is required' })}
             />
-            {/* email er required fill na korel ei message dekhabe */}
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.email.message}
+              </p>
+            )}
           </fieldset>
+
+          {/* Password field */}
           <fieldset className="fieldset relative">
-            <legend className="fieldset-legend">Password</legend>
-            <input
-              type="password"
-              name="password"
-              className="input"
-              placeholder="Type here password"
-              required
-            />
-            {/* password er required fill na korel ei message dekhabe */}
-            {/* Eye icon a click korle password er type toggle hobe */}
+            <legend className="fieldset-legend font-semibold">Password</legend>
+            <div className="relative">
+              <input
+                type={isShowPassword ? 'text' : 'password'}
+                className={`input w-full pr-10 ${errors.password ? 'border-red-500' : ''}`}
+                placeholder="Type here password"
+                {...register('password', {
+                  required: 'Password field is required',
+                })}
+              />
+              <span
+                className="absolute right-3 top-3 cursor-pointer text-gray-500"
+                onClick={() => setIsShowPassword(!isShowPassword)}>
+                {isShowPassword ? (
+                  <FaEyeSlash size={18} />
+                ) : (
+                  <FaEye size={18} />
+                )}
+              </span>
+            </div>
+            {errors.password && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.password.message}
+              </p>
+            )}
           </fieldset>
-          <button className="btn w-full bg-slate-800 text-white">Login</button>
+
+          <button className="btn w-full bg-slate-800 text-white hover:bg-slate-700">
+            Login
+          </button>
         </form>
-        <div className="divider">OR</div>
-        {/* google Login */}
+
+        <div className="divider text-gray-400">OR</div>
+
+        {/* Google Login Button */}
         <button
           onClick={handleGoogleSignIn}
-          className="btn w-full font-semibold text-xl flex justify-center items-center gap-1 mx-auto">
-          <Image src={GoogleImage} alt="Google Logo" className="w-[25px]" />{' '}
+          className="btn w-full font-semibold flex justify-center items-center gap-2 border border-gray-300 bg-white hover:bg-gray-50">
+          <Image src={GoogleImage} alt="Google Logo" className="w-[20px]" />{' '}
           Continue with Google
         </button>
-        <p className="mt-4">
+
+        <p className="mt-6 text-center text-sm">
           Don't have an account?{' '}
-          <Link href={'/register'} className="text-blue-500">
+          <Link
+            href={'/register'}
+            className="text-blue-500 font-bold hover:underline">
             Register
           </Link>
         </p>
