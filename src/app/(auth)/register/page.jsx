@@ -30,6 +30,12 @@ const RegisterPage = () => {
     }
   };
 
+  const handleGoogleSignIn = async () => {
+    await authClient.signIn.social({
+      provider: 'google',
+    });
+  };
+
   return (
     <div className="container mx-auto bg-slate-100 min-h-[70vh] flex justify-center items-center mt-10">
       <div className="p-6 rounded-xl bg-white w-full max-w-md">
@@ -95,7 +101,9 @@ const RegisterPage = () => {
         </form>
 
         <div className="divider">OR</div>
-        <button className="btn w-full font-semibold text-xl flex justify-center items-center gap-1 mx-auto">
+        <button
+          onClick={handleGoogleSignIn}
+          className="btn w-full font-semibold text-xl flex justify-center items-center gap-1 mx-auto">
           <Image src={GoogleImage} alt="Google Logo" className="w-[25px]" />{' '}
           Continue with Google
         </button>

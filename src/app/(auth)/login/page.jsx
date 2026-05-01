@@ -23,6 +23,12 @@ const LogInPage = () => {
     }
   };
 
+  const handleGoogleSignIn = async () => {
+    await authClient.signIn.social({
+      provider: 'google',
+    });
+  };
+
   return (
     <div className="container mx-auto bg-slate-100 min-h-[80vh] flex justify-center items-center">
       <div className="p-4 rounded-xl bg-white">
@@ -37,7 +43,7 @@ const LogInPage = () => {
             {/* React hook from use koray name="email" ei tuku baad jabe */}
             <input
               type="email" //Email er akar na hole warning dibe
-              name='email'
+              name="email"
               className="input"
               placeholder="Type here email"
               required
@@ -48,7 +54,7 @@ const LogInPage = () => {
             <legend className="fieldset-legend">Password</legend>
             <input
               type="password"
-              name='password'
+              name="password"
               className="input"
               placeholder="Type here password"
               required
@@ -59,7 +65,10 @@ const LogInPage = () => {
           <button className="btn w-full bg-slate-800 text-white">Login</button>
         </form>
         <div className="divider">OR</div>
-        <button className="btn w-full font-semibold text-xl flex justify-center items-center gap-1 mx-auto">
+        {/* google Login */}
+        <button
+          onClick={handleGoogleSignIn}
+          className="btn w-full font-semibold text-xl flex justify-center items-center gap-1 mx-auto">
           <Image src={GoogleImage} alt="Google Logo" className="w-[25px]" />{' '}
           Continue with Google
         </button>
