@@ -9,16 +9,6 @@ const Navbar = () => {
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
 
-  // const handleLogout = async () => {
-  //   await authClient.signOut({
-  //     fetchOptions: {
-  //       onSuccess: () => {
-  //         window.location.href = '/login';
-  //       },
-  //     },
-  //   });
-  // };
-
   const navItems = (
     <>
       <li>
@@ -35,11 +25,15 @@ const Navbar = () => {
 
   return (
     <div className="bg-[#011732]">
-      <div className="navbar text-white container mx-auto shadow-sm">
+      {/* navbar */}
+      <div className="navbar text-white container mx-auto shadow-sm px-2 md:px-4">
         {/* navbar start */}
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost lg:hidden p-1 mr-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -61,7 +55,12 @@ const Navbar = () => {
             </ul>
           </div>
           <Link href={'/'} className="flex items-center">
-            <Image src={NavImage} alt="NavLogo" className="w-32 md:w-40" />
+            {/* Adjusted width for small mobile screens */}
+            <Image
+              src={NavImage}
+              alt="NavLogo"
+              className="w-24 sm:w-32 md:w-40"
+            />
           </Link>
         </div>
 
@@ -75,16 +74,16 @@ const Navbar = () => {
         {/*navbar last  */}
         <div className="navbar-end">
           {isPending ? (
-            <span className="loading loading-spinner loading-lg"></span>
+            <span className="loading loading-spinner loading-md"></span>
           ) : user ? (
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 md:gap-3">
               <div className="hidden md:block text-right">
                 <p className="text-xs text-gray-400">Welcome,</p>
                 <p className="text-sm font-bold">{user.name}</p>
               </div>
 
               <div className="avatar">
-                <div className="w-10 rounded-full ring ring-amber-400 ring-offset-base-100 ring-offset-2">
+                <div className="w-8 md:w-10 rounded-full  ring-amber-400">
                   <Image
                     src={user?.image || useAvatar}
                     alt="User"
@@ -96,13 +95,13 @@ const Navbar = () => {
 
               <button
                 onClick={async () => await authClient.signOut()}
-                className="btn btn-sm md:btn-md bg-amber-400 hover:bg-amber-500 border-none text-[#011732] font-bold">
+                className="btn btn-xs md:btn-md bg-amber-400 hover:bg-amber-500 border-none text-[#011732] text-xl font-bold">
                 Logout
               </button>
             </div>
           ) : (
             <Link href={'/login'}>
-              <button className="btn bg-amber-400 hover:bg-amber-500 border-none text-[#011732] font-bold px-6 text-lg">
+              <button className="btn btn-sm md:btn-md bg-amber-400 hover:bg-amber-500 border-none text-[#011732] font-bold px-4 md:px-6 md:text-lg">
                 Login
               </button>
             </Link>
