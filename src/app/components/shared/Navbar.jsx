@@ -74,9 +74,7 @@ const Navbar = () => {
 
         {/*navbar last  */}
         <div className="navbar-end">
-          {isPending ? (
-            <span className="loading loading-spinner loading-md"></span>
-          ) : user ? (
+          { user ? (
             <div className="flex items-center gap-2 md:gap-3">
               <div className="hidden md:block text-right">
                 <p className="text-xs text-gray-400">Welcome,</p>
