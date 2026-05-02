@@ -17,7 +17,7 @@ const Banner = () => {
 
           <p className="text-base sm:text-lg md:text-xl max-w-md">
             Explore thousands of books across <br className="hidden sm:block" />{' '}
-            Story, Tech, and Science.
+            Story!, Tech, and Science.
           </p>
 
           <button className="btn bg-black text-white border-none hover:bg-gray-800 flex items-center gap-2 px-6">
