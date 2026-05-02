@@ -72,7 +72,7 @@ const Navbar = () => {
 
         {/*navbar last  */}
         <div className="navbar-end">
-          { user ? (
+          {user ? (
             <div className="flex items-center gap-2 md:gap-3">
               <div className="hidden md:block text-right">
                 <p className="text-xs text-gray-400">Welcome,</p>
@@ -80,13 +80,20 @@ const Navbar = () => {
               </div>
 
               <div className="avatar">
-                <div className="w-8 md:w-10 rounded-full  ring-amber-400">
-                  <Image
-                    src={user?.image || user?.name[0]}
-                    alt="User"
-                    width={40}
-                    height={40}
-                  />
+                <div className="w-8 md:w-10 rounded-full ring ring-amber-400 flex items-center justify-center bg-amber-500 text-[#011732] overflow-hidden">
+                  {user?.image ? (
+                    <Image
+                      src={user.image}
+                      alt={user.name}
+                      width={40}
+                      height={40}
+                      className="rounded-full object-cover"
+                    />
+                  ) : (
+                    <span className="text-xl font-bold uppercase">
+                      {user?.name?.[0]}
+                    </span>
+                  )}
                 </div>
               </div>
 
