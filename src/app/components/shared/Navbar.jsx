@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import NavImage from '../../assets/booknest-logo-navbar.png';
 import { authClient } from '@/app/lib/auth-client';
-import useAvatar from '../../assets/user.png';
 
 const Navbar = () => {
   const { data: session, isPending } = authClient.useSession();
@@ -83,7 +82,7 @@ const Navbar = () => {
               <div className="avatar">
                 <div className="w-8 md:w-10 rounded-full  ring-amber-400">
                   <Image
-                    src={user?.image || useAvatar}
+                    src={user?.image || user?.name[0]}
                     alt="User"
                     width={40}
                     height={40}
