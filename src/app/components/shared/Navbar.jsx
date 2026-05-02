@@ -56,7 +56,6 @@ const Navbar = () => {
             </ul>
           </div>
           <Link href={'/'} className="flex items-center">
-            {/* Adjusted width for small mobile screens */}
             <Image
               src={NavImage}
               alt="NavLogo"

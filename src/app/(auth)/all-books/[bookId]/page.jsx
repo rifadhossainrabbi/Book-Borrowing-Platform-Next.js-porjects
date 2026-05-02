@@ -1,18 +1,16 @@
-// 'use client';
 import BookImage from '@/app/components/allbookspage/BookImage';
 import { getBooks } from '@/app/lib/data';
-import Image from 'next/image';
 import Link from 'next/link';
-// import React, { useState } from 'react';
+
 
 const BookDetails = async ({ params }) => {
   const { bookId } = await params;
-  // const book = await getBookById(bookId);
-  // console.log(book);
-  // const [loading, setLoading] = useState(true);
   const books = await getBooks();
   const book = books.find((b) => b.id == Number(bookId));
   console.log(book, 'Book Detail');
+  if (!book) {
+    return <div className="text-center py-20">Book not found!</div>;
+  }
 
   console.log(bookId, 'Id');
   return (
