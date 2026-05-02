@@ -18,9 +18,9 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      data-theme="light"
+      data-theme="dark"
       className={`${roboto.className} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-gray-100">
+      <body className="min-h-full flex flex-col">
         {children}
         <Toaster position="top-center" reverseOrder={false} />
       </body>

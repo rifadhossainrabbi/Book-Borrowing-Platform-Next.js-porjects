@@ -7,7 +7,7 @@ import { authClient } from '@/app/lib/auth-client';
 const Navbar = () => {
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
-  console.log(session, "Session from Navbar");
+  console.log(session, 'Session from Navbar');
 
   const navItems = (
     <>
@@ -79,23 +79,25 @@ const Navbar = () => {
                 <p className="text-sm font-bold">{user.name}</p>
               </div>
 
-              <div className="avatar">
-                <div className="w-8 md:w-10 rounded-full ring ring-amber-400 flex items-center justify-center bg-amber-500 text-[#011732] overflow-hidden">
-                  {user?.image ? (
-                    <Image
-                      src={user.image}
-                      alt={user.name}
-                      width={40}
-                      height={40}
-                      className="rounded-full object-cover"
-                    />
-                  ) : (
-                    <span className="text-xl font-bold uppercase">
-                      {user?.name?.[0]}
-                    </span>
-                  )}
+              <Link href={'/my-profile'}>
+                <div className="avatar">
+                  <div className="w-8 md:w-10 rounded-full ring ring-amber-400 flex items-center justify-center bg-amber-500 text-[#011732] overflow-hidden">
+                    {user?.image ? (
+                      <Image
+                        src={user.image}
+                        alt={user.name}
+                        width={40}
+                        height={40}
+                        className="rounded-full object-cover"
+                      />
+                    ) : (
+                      <span className="text-xl font-bold uppercase">
+                        {user?.name?.[0]}
+                      </span>
+                    )}
+                  </div>
                 </div>
-              </div>
+              </Link>
 
               <button
                 onClick={async () => await authClient.signOut()}
