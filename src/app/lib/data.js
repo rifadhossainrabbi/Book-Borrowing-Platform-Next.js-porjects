@@ -1,8 +1,10 @@
 export async function getBooks() {
-  const res = await fetch(`${process.env.BETTER_AUTH_URL}/data.json`, {
-    cache: 'no-store',
-  });
+  const res = await fetch(
+    'https://book-borrowing-platform-next-js-por.vercel.app/data.json',
+    {
+      cache: 'no-store',
+    },
+  );
   const data = await res.json();
   return data;
 }
-
