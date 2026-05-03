@@ -3,30 +3,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import NavImage from '../../assets/booknest-logo-navbar.png';
 import { authClient } from '@/app/lib/auth-client';
+import Navlinks from './Navlinks';
 
 const Navbar = () => {
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
   console.log(session, 'Session from Navbar');
 
-  const navItems = (
-    <>
-      <li>
-        <Link href={'/'}>Home</Link>
-      </li>
-      <li>
-        <Link href={'/all-books'}>All Books</Link>
-      </li>
-      <li>
-        <Link href={'/my-profile'}>My Profile</Link>
-      </li>
-    </>
-  );
-
   return (
-    <div className="bg-[#011732]">
-      {/* navbar */}
-      <div className="navbar text-white container mx-auto shadow-sm px-2 md:px-4">
+    <div className="bg-black">
+      <div className="text-white container py-2 flex mx-auto shadow-sm px-4 md:px-8">
         {/* navbar start */}
         <div className="navbar-start">
           <div className="dropdown">
@@ -51,7 +37,15 @@ const Navbar = () => {
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-[#011732] rounded-box z-[1] mt-3 w-52 p-2 shadow border border-gray-700">
-              {navItems}
+              <li>
+                <Navlinks href={'/'}>Home</Navlinks>
+              </li>
+              <li>
+                <Navlinks href={'/all-books'}>All Books</Navlinks>
+              </li>
+              <li>
+                <Navlinks href={'/my-profile'}>My Profile</Navlinks>
+              </li>
             </ul>
           </div>
           <Link href={'/'} className="flex items-center">
@@ -66,7 +60,15 @@ const Navbar = () => {
         {/* navbar middle */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 gap-2 font-medium">
-            {navItems}
+            <li>
+              <Navlinks href={'/'}>Home</Navlinks>
+            </li>
+            <li>
+              <Navlinks href={'/all-books'}>All Books</Navlinks>
+            </li>
+            <li>
+              <Navlinks href={'/my-profile'}>My Profile</Navlinks>
+            </li>
           </ul>
         </div>
 
@@ -81,7 +83,7 @@ const Navbar = () => {
 
               <Link href={'/my-profile'}>
                 <div className="avatar">
-                  <div className="w-8 md:w-10 rounded-full ring ring-amber-400 flex items-center justify-center bg-amber-500 text-[#011732] overflow-hidden">
+                  <div className="w-8 md:w-10 rounded-full ring ring-[#6335c6] flex items-center justify-center bg-[#6335c6] text-white overflow-hidden">
                     {user?.image ? (
                       <Image
                         src={user.image}
@@ -101,13 +103,13 @@ const Navbar = () => {
 
               <button
                 onClick={async () => await authClient.signOut()}
-                className="btn btn-xs md:btn-md bg-amber-400 hover:bg-amber-500 border-none text-[#011732] text-xl font-bold">
+                className="btn btn-xs md:btn-md bg-[#6335c6] hover:bg-[#6c3bd7] border-none text-white text-xl font-bold">
                 Logout
               </button>
             </div>
           ) : (
             <Link href={'/login'}>
-              <button className="btn btn-sm md:btn-md bg-amber-400 hover:bg-amber-500 border-none text-[#011732] font-bold px-4 md:px-6 md:text-lg">
+              <button className="btn btn-sm md:btn-md bg-[#6335c6] hover:bg-[#6c3bd7] border-none text-white font-bold px-4 md:px-6 md:text-lg">
                 Login
               </button>
             </Link>

@@ -7,29 +7,38 @@ const BooksCard = ({ book }) => {
   return (
     <div
       key={book.id}
-      className="rounded-md border-0 shadow-md bg-gray-50 p-3 flex flex-col h-full">
-      <div className="relative w-full aspect-[5/7] shrink-0">
+      className="group rounded-2xl bg-[#111111] border border-gray-800 p-4 flex flex-col h-full hover:border-purple-500/40 transition-all duration-300 shadow-xl">
+      {/* book image */}
+      <div className="relative w-full aspect-[5/7] overflow-hidden rounded-xl">
         <Image
           src={book.image_url}
           alt={book.title}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover rounded-xl outline-1 outline-green-300"
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className="object-cover"
         />
       </div>
 
-      <div className="p-3 flex flex-col flex-grow">
+      {/* author detail and available books */}
+      <div className="pt-5 flex flex-col flex-grow">
         <div className="flex-grow">
-          <h2 className="text-green-500 font-bold text-lg line-clamp-2">
-            {book.title}
-          </h2>
-          <p className="text-gray-600 text-sm">{book.author}</p>
+          {/* book name and available */}
+          <div className="flex justify-between items-start gap-2 mb-2">
+            <h2 className="text-white font-semibold text-lg group-hover:text-purple-400 transition-colors">
+              {book.title}
+            </h2>
+            <span className="text-[10px] uppercase tracking-wider bg-purple-500/10 text-purple-400 px-2 py-1 rounded-md border border-purple-500/20 whitespace-nowrap">
+              {book.available_quantity} Left
+            </span>
+          </div>
+            <p className="text-gray-400 text-sm mb-4">{book.author}</p>
         </div>
 
-        <div className="mt-auto pt-3">
-          <Link href={`/all-books/${book.id}`}>
-            <button className="btn bg-[#011732] hover:bg-[#011732]/90 w-full text-white rounded-md py-2">
-              View Details <FaArrowRight />
+        {/* button */}
+        <div className="mt-auto">
+          <Link href={`/all-books/${book.id}`} className="block">
+            <button className="flex items-center justify-center gap-2 w-full bg-purple-600 hover:bg-purple-700 text-white text-sm font-bold py-3 rounded-xl transition-all active:scale-95">
+              View Details <FaArrowRight className="text-xs" />
             </button>
           </Link>
         </div>

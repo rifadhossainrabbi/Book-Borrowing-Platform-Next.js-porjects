@@ -18,23 +18,30 @@ const FeaturedBooks = async () => {
   const books = await res.json();
 
   return (
-    <div className="w-10/12 mx-auto p-7 bg-white">
-      <div className="flex justify-between">
-        <h1 className={`${robotoslab.className} text-3xl mb-3`}>
-          Featured Books
-        </h1>
-        <Link href={'/all-books'}>
-          <span className="text-blue-500 text-xl font-semibold flex items-center gap-1">
-            View All <FaArrowRight />
-          </span>
-        </Link>
+    <section className="bg-[#0e0c10] py-12 md:py-20">
+      <div className="container mx-auto px-4 lg:px-0">
+        {/* Header Section */}
+        <div className="flex flex-row items-center justify-between mb-8 md:mb-12 md:px-8">
+          <h1
+            className={`${robotoslab.className} text-2xl md:text-4xl font-bold text-white`}>
+            Featured Books
+          </h1>
+          <Link href={'/all-books'}>
+            <span className="group text-purple-500 hover:text-purple-400 text-sm md:text-xl font-semibold flex items-center gap-2 transition-colors">
+              View All{' '}
+              <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-500" />
+            </span>
+          </Link>
+        </div>
+
+        {/* Books */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 md:px-8">
+          {books.slice(0, 4).map((book) => (
+            <BooksCard book={book} key={book.id} />
+          ))}
+        </div>
       </div>
-      <div className="grid grid-cols-4 gap-8">
-        {books.slice(0, 4).map((book) => (
-          <BooksCard book={book} key={book.id} />
-        ))}
-      </div>
-    </div>
+    </section>
   );
 };
 

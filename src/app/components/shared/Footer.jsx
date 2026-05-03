@@ -10,7 +10,7 @@ import { FaSquareXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#011732] text-white pt-16 pb-8 border-t border-gray-800">
+    <footer className="bg-[#011732] text-white pt-16 pb-8 border-t border-gray-800 text-center md:text-left">
       <div className="w-10/12 mx-auto">
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-20 mb-12">
@@ -30,7 +30,7 @@ const Footer = () => {
               books.
             </p>
             {/* social icons */}
-            <div className="flex items-center gap-4 pt-2">
+            <div className="flex items-center gap-4 pt-2 justify-center md:justify-start">
               <a
                 href="#"
                 className="text-gray-400 hover:text-white transition-colors">
