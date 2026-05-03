@@ -94,7 +94,7 @@ const LogInPage = () => {
             )}
           </fieldset>
 
-          <button className="btn bg-purple-600 hover:bg-purple-700 text-white w-full h-10 rounded-xl border-none text-lg font-bold mt-4 shadow-lg shadow-purple-600/20 flex items-center justify-center transition-all duration-300 active:scale-95">
+          <button className="btn bg-purple-600 hover:bg-purple-700 text-white w-full h-10 rounded-md border-none text-lg font-bold mt-4 shadow-lg shadow-purple-600/20 flex items-center justify-center transition-all duration-300 active:scale-95">
             Login
           </button>
         </form>

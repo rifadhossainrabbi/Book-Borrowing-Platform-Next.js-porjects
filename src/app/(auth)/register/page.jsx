@@ -46,12 +46,12 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="container mx-auto bg-slate-100 min-h-[70vh] flex justify-center items-center mt-10 p-4">
-      <div className="p-6 rounded-xl bg-white w-full max-w-md shadow-md">
+    <div className="container mx-auto min-h-[70vh] flex justify-center items-center mt-10 p-4">
+      <div className="p-6 rounded-xl border border-gray-600 w-full max-w-md shadow-md">
+        {/* header */}
         <h2 className="text-3xl font-bold text-center mb-6">
           Register your account
         </h2>
-
 
         <form onSubmit={handleSubmit(handleRegisterFunc)} className="space-y-4">
           {/* Name Field */}
@@ -77,10 +77,6 @@ const RegisterPage = () => {
               placeholder="Enter your email"
               {...register('email', {
                 required: 'Email field is required',
-                pattern: {
-                  value: /^\S+@\S+$/i,
-                  message: 'Invalid email format',
-                },
               })}
             />
             {errors.email && (
@@ -134,7 +130,7 @@ const RegisterPage = () => {
             )}
           </fieldset>
 
-          <button className="btn w-full bg-slate-800 text-white hover:bg-slate-700">
+          <button className="btn bg-purple-600 hover:bg-purple-700 text-white w-full h-10 rounded-md border-none text-lg font-bold mt-4 shadow-lg shadow-purple-600/20 flex items-center justify-center transition-all duration-300 active:scale-95">
             Register
           </button>
         </form>
@@ -143,7 +139,7 @@ const RegisterPage = () => {
 
         <button
           onClick={handleGoogleSignIn}
-          className="btn w-full font-semibold flex justify-center items-center gap-2 border border-gray-300 bg-white hover:bg-gray-50">
+          className="btn w-full font-semibold flex justify-center items-center gap-2 bg-black hover:bg-gray-50 hover:text-black">
           <Image src={GoogleImage} alt="Google Logo" className="w-[20px]" />{' '}
           Continue with Google
         </button>
