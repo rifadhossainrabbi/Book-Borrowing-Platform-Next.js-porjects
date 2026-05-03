@@ -6,7 +6,7 @@ const ButtonCategory = ({ category }) => {
     <div className="flex flex-col gap-3">
       <Link
         href="/all-books"
-        className={`btn ${!category ? 'btn-neutral' : 'btn-outline'}`}>
+        className={`btn ${!category ? 'bg-purple-500' : 'btn-outline'}`}>
         All Categories
       </Link>
       <Link
