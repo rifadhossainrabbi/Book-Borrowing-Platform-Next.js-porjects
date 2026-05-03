@@ -4,11 +4,32 @@ import Link from 'next/link';
 import NavImage from '../../assets/booknest-logo-navbar.png';
 import { authClient } from '@/app/lib/auth-client';
 import Navlinks from './Navlinks';
+import { usePathname, useRouter } from 'next/navigation'; 
 
 const Navbar = () => {
+  const pathname = usePathname(); 
+  const router = useRouter(); 
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
-  console.log(session, 'Session from Navbar');
+
+  const handleLogout = async () => {
+    await authClient.signOut({
+      fetchOptions: {
+        onSuccess: () => {
+          const privatePaths = ['/my-profile', '/all-books'];
+          const isPrivatePage = privatePaths.some((path) =>
+            pathname.startsWith(path),
+          );
+
+          if (isPrivatePage) {
+            router.push('/login');
+          } else {
+            router.refresh();
+          }
+        },
+      },
+    });
+  };
 
   return (
     <div className="bg-black sticky top-0 z-[100]">
@@ -74,7 +95,9 @@ const Navbar = () => {
 
         {/*navbar last  */}
         <div className="navbar-end">
-          {user ? (
+          {isPending ? (
+            <span className="loading loading-spinner loading-md"></span>
+          ) : user ? (
             <div className="flex items-center gap-2 md:gap-3">
               <div className="hidden md:block text-right">
                 <p className="text-xs text-gray-400">Welcome,</p>
@@ -102,14 +125,14 @@ const Navbar = () => {
               </Link>
 
               <button
-                onClick={async () => await authClient.signOut()}
-                className="btn btn-xs md:btn-md bg-[#6335c6] hover:bg-[#6c3bd7] border-none text-white text-xl font-bold">
+                onClick={handleLogout} 
+                className="btn btn-xs md:btn-md bg-[#6335c6] hover:bg-[#6c3bd7] border-none text-white text-sm font-bold">
                 Logout
               </button>
             </div>
           ) : (
             <Link href={'/login'}>
-              <button className="btn btn-sm md:btn-md bg-[#6335c6] hover:bg-[#6c3bd7] border-none text-white font-bold px-4 md:px-6 md:text-lg">
+              <button className="btn btn-sm md:btn-md bg-[#6335c6] hover:bg-[#6c3bd7] border-none text-white font-bold px-4 md:px-6">
                 Login
               </button>
             </Link>

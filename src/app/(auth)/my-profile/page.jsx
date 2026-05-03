@@ -50,7 +50,9 @@ const ProfilePage = () => {
       <div className="max-w-md md:max-w-lg mx-auto bg-[#121212] rounded-[2.5rem] overflow-hidden border border-white/5 shadow-2xl">
         {/* Profile header */}
         <div className="px-6 md:px-8 pt-8 pb-6 border-b border-white/5">
-          <h1 className="text-2xl font-bold text-white text-center sm:text-left">My Profile</h1>
+          <h1 className="text-2xl font-bold text-white text-center sm:text-left">
+            My Profile
+          </h1>
         </div>
 
         {/* user name and image */}
@@ -77,9 +79,10 @@ const ProfilePage = () => {
 
         {/* info table */}
         <div className="px-6 md:px-8 pb-8">
-
           {/* info */}
-          <h3 className="text-lg font-bold text-white mb-4 text-center sm:text-left">Information</h3>
+          <h3 className="text-lg font-bold text-white mb-4 text-center sm:text-left">
+            Information
+          </h3>
           <div className="rounded-2xl border border-white/5 overflow-hidden bg-zinc-900/30">
             {profileInfoItems.map((item, index) => (
               <div
@@ -178,7 +181,6 @@ const ProfilePage = () => {
               </label>
             </div>
           </div>
-
         </div>
       </div>
     </div>
