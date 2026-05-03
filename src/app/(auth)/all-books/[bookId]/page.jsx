@@ -2,67 +2,81 @@ import BookImage from '@/app/components/allbookspage/BookImage';
 import { getBooks } from '@/app/lib/data';
 import Link from 'next/link';
 
-
 const BookDetails = async ({ params }) => {
   const { bookId } = await params;
   const books = await getBooks();
   const book = books.find((b) => b.id == Number(bookId));
-  console.log(book, 'Book Detail');
+
   if (!book) {
-    return <div className="text-center py-20">Book not found!</div>;
+    return (
+      <div className="min-h-screen bg-[#0e0c10] flex items-center justify-center text-white font-bold">
+        Book not found!
+      </div>
+    );
   }
 
-  console.log(bookId, 'Id');
   return (
-    <div className="min-h-screen bg-[#f8f6f2] px-4 py-10">
+    // container div
+    <div className="min-h-screen bg-[#0e0c10] px-4 sm:px-6 py-10 md:py-20 text-white">
+      {/* main div */}
       <div className="max-w-6xl mx-auto">
-        {/* back button */}
+        {/* back button to all books page */}
         <Link href="/all-books">
-          <button className="mb-8 px-5 py-2 rounded-full border border-gray-300 hover:bg-black hover:text-white duration-300">
-            ← Back to All Books
+          <button className="mb-8 md:mb-12 flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-300 font-medium text-sm md:text-base">
+            <span className="text-xl">←</span> Back to All Books
           </button>
         </Link>
 
-        {/* Card */}
-        <div className="bg-white rounded-3xl shadow-xl overflow-hidden grid md:grid-cols-2 gap-10 p-6 md:p-10">
-          <div className="bg-[#f5f5f5] rounded-2xl flex justify-center items-center p-6">
-            {/* left side image section */}
-            
-            {/* Image loading hole eita dekhabe */}
-            <BookImage src={book.image_url} alt={book.title} />
+        {/* 2 column layout (book image and info) */}
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-8 md:gap-12 lg:gap-24 items-start">
+          {/* left side image section */}
+          <div className="w-full flex justify-center md:justify-start col-span-1 md:col-span-2">
+            <div className="w-full max-w-[280px] sm:max-w-sm md:max-w-none rounded-2xl overflow-hidden shadow-2xl shadow-black/50">
+              <BookImage src={book.image_url} alt={book.title} />
+            </div>
           </div>
 
-          {/* right side section */}
-          <div className="flex flex-col justify-center">
-            <p className="text-sm uppercase tracking-widest text-orange-500 font-semibold mb-2">
-              {book.category}
-            </p>
-
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
-              {book.title}
-            </h1>
-
-            <p className="mt-3 text-lg text-gray-500 font-medium">
-              by {book.author}
-            </p>
-
-            <p className="mt-6 text-gray-600 leading-8 text-lg">
-              {book.description}
-            </p>
-
-            <div className="mt-8">
-              <h3 className="text-sm font-semibold text-gray-500 uppercase">
-                Available Copies
-              </h3>
-              <p className="text-2xl font-bold text-green-600 mt-1">
-                {book.available_quantity} Copies Left
+          {/* right side book info */}
+          <div className="flex flex-col space-y-5 md:space-y-6 pt-2 col-span-1 md:col-span-4 text-center md:text-left">
+            <div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                {book.title}
+              </h1>
+              <p className="mt-2 text-lg md:text-xl text-gray-400 font-medium">
+                {book.author}
               </p>
             </div>
 
-            {/* borrow button */}
-            <button className="mt-8 w-fit px-8 py-3 rounded-full bg-black text-white font-semibold hover:bg-orange-500 duration-300 shadow-md">
-              Borrow This Book
-            </button>
+            {/* book category */}
+            <div className="pt-1 flex justify-center md:justify-start">
+              <span className="inline-block px-5 py-1.5 rounded-lg bg-green-500/10 text-green-500 text-sm font-bold border border-green-500/20">
+                {book.category}
+              </span>
+            </div>
+
+            {/* book descripton */}
+            <p className="text-gray-400 leading-relaxed text-base md:text-lg max-w-xl mx-auto md:mx-0">
+              {book.description}
+            </p>
+
+            {/* available quantity and button */}
+            <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 lg:gap-12 items-center md:items-start lg:items-center pt-4">
+              <div className="space-y-1">
+                <h3 className="text-xs md:text-sm font-semibold text-gray-500 uppercase tracking-widest">
+                  Available Quantity
+                </h3>
+                <p className="text-lg md:text-xl font-bold text-green-500">
+                  {book.available_quantity} copies left
+                </p>
+              </div>
+
+              {/* button - modified with glow and hover effect */}
+              <div className="w-full sm:w-auto">
+                <button className="w-full sm:w-auto px-10 h-14 rounded-xl bg-transparent border border-purple-600 text-white font-bold text-lg transition-all duration-300 hover:bg-purple-700 hover:shadow-[0_0_25px_rgba(147,51,234,0.4)] active:scale-95 shadow-lg shadow-purple-600/20">
+                  Borrow This Book
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
