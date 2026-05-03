@@ -40,19 +40,21 @@ const LogInPage = () => {
   };
 
   return (
-    <div className="container mx-auto bg-slate-100 min-h-[80vh] flex justify-center items-center p-4">
-      <div className="p-8 rounded-xl bg-white shadow-lg w-full max-w-md">
+    <div className="container mx-auto min-h-[80vh] flex justify-center items-center p-4">
+      <div className="p-8 rounded-xl border border-gray-600 shadow-lg w-full max-w-md">
+        {/* header */}
         <h2 className="text-3xl font-bold text-center mb-6">
           Login your account
         </h2>
 
+        {/* form */}
         <form className="space-y-4" onSubmit={handleSubmit(handleLoginFunc)}>
-          {/* Email field */}
+          {/* input email */}
           <fieldset className="fieldset">
             <legend className="fieldset-legend font-semibold">Email</legend>
             <input
               type="email"
-              className={`input w-full ${errors.email ? 'border-red-500' : ''}`}
+              className={`input w-full ${errors.email && 'border-red-500'}`}
               placeholder="Type here email"
               {...register('email', { required: 'Email field is required' })}
             />
@@ -69,7 +71,7 @@ const LogInPage = () => {
             <div className="relative">
               <input
                 type={isShowPassword ? 'text' : 'password'}
-                className={`input w-full pr-10 ${errors.password ? 'border-red-500' : ''}`}
+                className={`input w-full pr-10 ${errors.password && 'border-red-500'}`}
                 placeholder="Type here password"
                 {...register('password', {
                   required: 'Password field is required',
@@ -92,23 +94,25 @@ const LogInPage = () => {
             )}
           </fieldset>
 
-          <button className="btn w-full bg-slate-800 text-white hover:bg-slate-700">
+          <button className="btn bg-purple-600 hover:bg-purple-700 text-white w-full h-10 rounded-xl border-none text-lg font-bold mt-4 shadow-lg shadow-purple-600/20 flex items-center justify-center transition-all duration-300 active:scale-95">
             Login
           </button>
         </form>
 
-        <div className="divider text-gray-400">OR</div>
+        <div className="divider text-gray-400">
+          <span className='text-gray-400'>OR</span>
+        </div>
 
         {/* Google Login Button */}
         <button
           onClick={handleGoogleSignIn}
-          className="btn w-full font-semibold flex justify-center items-center gap-2 border border-gray-300 bg-white hover:bg-gray-50">
-          <Image src={GoogleImage} alt="Google Logo" className="w-[20px]" />{' '}
+          className="btn w-full font-semibold flex justify-center items-center gap-2 bg-black hover:bg-gray-50 hover:text-black">
+          <Image src={GoogleImage} alt="Google Logo" className="w-[20px]" />
           Continue with Google
         </button>
 
         <p className="mt-6 text-center text-sm">
-          Don't have an account?{' '}
+          Don't have an account?
           <Link
             href={'/register'}
             className="text-blue-500 font-bold hover:underline">

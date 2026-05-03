@@ -85,9 +85,11 @@ const ProfilePage = () => {
               <div
                 key={index}
                 className={`flex flex-col sm:flex-row sm:justify-between sm:items-center p-4 gap-1 sm:gap-0 ${index !== profileInfoItems.length - 1 ? 'border-b border-white/5' : ''}`}>
+                {/* label */}
                 <span className="text-sm font-semibold text-gray-500">
                   {item.label}
                 </span>
+                {/* user name */}
                 <span className="text-sm font-medium text-gray-300 truncate max-w-full sm:max-w-[200px] sm:text-right">
                   {item.value}
                 </span>
