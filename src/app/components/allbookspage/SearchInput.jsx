@@ -17,46 +17,52 @@ const SearchInput = ({ allBooks, currentCategory }) => {
       .toLowerCase()
       .includes(searchByTitle.toLowerCase());
 
-    // duitai return korbe 
+    // duitai return korbe
     return matchesCat && matchesSearch;
   });
 
   return (
     <>
-      {/* search input */}
-      <div className="p-4 md:p-8 bg-white sticky top-0 z-10">
-        <label className="input input-bordered flex items-center gap-2 w-full">
-          <svg
-            className="h-5 w-5 opacity-50"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24">
-            <g
-              strokeLinejoin="round"
-              strokeLinecap="round"
-              strokeWidth="2.5"
-              fill="none"
-              stroke="currentColor">
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="m21 21-4.3-4.3"></path>
-            </g>
-          </svg>
+      {/* search icon and all books */}
+      {/* main div */}
+      <div className="p-4 md:p-8 bg-[#0e0c10] sticky top-0 z-10">
+        <div className="relative w-full">
+          {/*search bar */}
+          <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+            {/* search icon */}
+            <svg
+              className="h-5 w-5 text-gray-500"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24">
+              <g
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="2.5"
+                fill="none"
+                stroke="currentColor">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+          </div>
+          {/* input label */}
           <input
             type="text"
             placeholder="Search books by title..."
-            className="grow"
+            className="w-full bg-zinc-900/50 border border-white/10 text-white pl-12 pr-4 py-3.5 rounded-xl focus:outline-none focus:border-purple-600 transition-all placeholder:text-gray-500"
             onChange={(e) => setSearchByTitle(e.target.value)}
           />
-        </label>
+        </div>
       </div>
 
-      {/* booklist*/}
+      {/* allbooks */}
       <div className="flex-1 overflow-y-auto p-4 md:p-8 pt-0">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
           {filtered.length > 0 ? (
             filtered.map((book) => <BooksCard key={book.id} book={book} />)
           ) : (
-            <div className="col-span-full text-center py-10 text-gray-400">
-              No books found.
+            <div className="col-span-full text-center py-20 text-gray-500">
+              <p className="text-xl">No books found matching your search.</p>
             </div>
           )}
         </div>
