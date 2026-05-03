@@ -16,7 +16,7 @@ const Navbar = () => {
     await authClient.signOut({
       fetchOptions: {
         onSuccess: () => {
-          const privatePaths = ['/my-profile', '/all-books'];
+          const privatePaths = ['/my-profile', '/all-books/path'];
           const isPrivatePage = privatePaths.some((path) =>
             pathname.startsWith(path),
           );
