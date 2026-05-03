@@ -11,7 +11,7 @@ const Navbar = () => {
   console.log(session, 'Session from Navbar');
 
   return (
-    <div className="bg-black">
+    <div className="bg-black sticky top-0 z-[100]">
       <div className="text-white container py-2 flex mx-auto shadow-sm px-4 md:px-8">
         {/* navbar start */}
         <div className="navbar-start">

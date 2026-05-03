@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import BooksCard from '@/app/components/homepage/BooksCard';
+import ButtonCategory from '../shared/ButtonCategory';
 
 const SearchInput = ({ allBooks, currentCategory }) => {
   const [searchByTitle, setSearchByTitle] = useState('');
@@ -25,7 +26,7 @@ const SearchInput = ({ allBooks, currentCategory }) => {
     <>
       {/* search icon and all books */}
       {/* main div */}
-      <div className="p-4 md:p-8 bg-[#0e0c10] sticky top-0 z-10">
+      <div className="p-4 md:p-8 bg-[#0e0c10] sticky top-12 md:top-0 z-10">
         <div className="relative w-full">
           {/*search bar */}
           <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
@@ -53,11 +54,19 @@ const SearchInput = ({ allBooks, currentCategory }) => {
             onChange={(e) => setSearchByTitle(e.target.value)}
           />
         </div>
+
+        {/* mobile device er jonno */}
+        <div className="flex flex-col md:hidden w-full md:w-3/12 lg:w-2/12 bg-[#0e0c10] p-5 md:p-6 md:border-r border-white/5 h-auto md:h-full overflow-y-auto">
+          {/* buttons */}
+          <div className="flex">
+            <ButtonCategory category={currentCategory} />
+          </div>
+        </div>
       </div>
 
       {/* allbooks */}
-      <div className="flex-1 overflow-y-auto p-4 md:p-8 pt-0">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+      <div className="flex-1 p-4 md:p-8 pt-0">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
           {filtered.length > 0 ? (
             filtered.map((book) => <BooksCard key={book.id} book={book} />)
           ) : (

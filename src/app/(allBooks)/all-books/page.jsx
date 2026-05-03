@@ -10,9 +10,10 @@ const AllBooksPage = async ({ searchParams }) => {
     // container div
     <div className="bg-[#0e0c10]">
       {/* main container */}
-      <div className="flex flex-col md:flex-row w-full lg:w-10/12 mx-auto md:h-screen md:overflow-hidden">
+      <div className="flex flex-col md:flex-row w-full lg:w-10/12 mx-auto md:h-screen md:overflow-hidden scroll-smooth">
         {/* Category buttons */}
-        <div className="w-full md:w-3/12 lg:w-2/12 bg-[#0e0c10] p-5 md:p-6 md:border-r border-white/5 h-auto md:h-full overflow-y-auto">
+        {/* mobile device a hidden hobe r md device theke show hobe */}
+        <div className="hidden md:block w-full md:w-3/12 lg:w-2/12 bg-[#0e0c10] p-5 md:p-6 md:border-r border-white/5 h-auto md:h-full">
           <h1 className="text-xl md:text-2xl font-bold text-white mb-6 border-b border-white/10 pb-4">
             Categories
           </h1>
@@ -20,12 +21,11 @@ const AllBooksPage = async ({ searchParams }) => {
         </div>
 
         {/* Search input and all books */}
-        <div className="w-full md:w-9/12 lg:w-10/12 flex flex-col bg-[#0e0c10] md:h-full overflow-y-auto">
+        <div className="w-full md:w-9/12 lg:w-10/12 flex flex-col bg-[#0e0c10] md:h-full md:overflow-y-auto">
           <div className="p-4 md:p-0">
             <SearchInput allBooks={books} currentCategory={category} />
           </div>
         </div>
-
       </div>
     </div>
   );

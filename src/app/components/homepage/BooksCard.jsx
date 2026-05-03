@@ -22,8 +22,9 @@ const BooksCard = ({ book }) => {
       {/* author detail and available books */}
       <div className="pt-5 flex flex-col flex-grow">
         <div className="flex-grow">
+        
           {/* book name and available */}
-          <div className="flex justify-between items-start gap-2 mb-2">
+          <div className="flex flex-col md:flex-row justify-between items-start gap-2 mb-2">
             <h2 className="text-white font-semibold text-lg group-hover:text-purple-400 transition-colors">
               {book.title}
             </h2>
@@ -37,7 +38,7 @@ const BooksCard = ({ book }) => {
         {/* button */}
         <div className="mt-auto">
           <Link href={`/all-books/${book.id}`} className="block">
-            <button className="flex items-center justify-center gap-2 w-full bg-purple-600 hover:bg-purple-700 text-white text-sm font-bold py-3 rounded-xl transition-all active:scale-95">
+            <button className="flex items-center justify-center gap-2 w-full bg-purple-600 hover:bg-purple-700 text-white text-sm font-bold py-1 md:py-3 rounded-xl transition-all active:scale-95">
               View Details <FaArrowRight className="text-xs" />
             </button>
           </Link>
