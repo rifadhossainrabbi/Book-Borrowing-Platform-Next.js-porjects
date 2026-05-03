@@ -86,8 +86,8 @@ const Navbar = () => {
                   <div className="w-8 md:w-10 rounded-full ring ring-[#6335c6] flex items-center justify-center bg-[#6335c6] text-white overflow-hidden">
                     {user?.image ? (
                       <Image
-                        src={user.image}
-                        alt={user.name}
+                        src={user?.image}
+                        alt={user?.name}
                         width={40}
                         height={40}
                         className="rounded-full object-cover"
