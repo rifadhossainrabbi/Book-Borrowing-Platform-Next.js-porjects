@@ -18,7 +18,7 @@ const FeaturedBooks = async () => {
   const books = await res.json();
 
   return (
-    <section className="bg-[#0e0c10] py-12">
+    <section className="bg-linear-to-r from-[#000000] via-[#ffb34722] to-[#050302] py-12">
       <div className="container mx-auto px-4 lg:px-0">
         {/* Header Section */}
         <div className="flex flex-row items-center justify-between mb-8 md:mb-12 md:px-8">
