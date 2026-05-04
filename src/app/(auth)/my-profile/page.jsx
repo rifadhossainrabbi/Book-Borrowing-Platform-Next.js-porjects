@@ -20,26 +20,9 @@ const ProfilePage = () => {
     { label: 'User ID', value: user?.id },
   ];
 
-  // form handler
-  // const handleUpdateProfile = async (e) => {
-  //   e.preventDefault();
-  //   const formData = new FormData(e.currentTarget);
-  //   const name = formData.get('name');
-  //   const image = formData.get('image');
-
-  //   const { data, error } = await authClient.updateUser({
-  //     name,
-  //     image,
-  //   });
-
-  //   if (error) {
-  //     toast.error(error.message || 'Failed to update');
-  //   } else {
-  //     toast.success('Profile updated successfully!');
-  //     const modalCheckbox = document.getElementById('update_info_modal');
-  //     if (modalCheckbox) modalCheckbox.checked = false;
-  //   }
-  // };
+  if (!session) {
+    router.push('/login');
+  }
 
   if (isPending) {
     return (

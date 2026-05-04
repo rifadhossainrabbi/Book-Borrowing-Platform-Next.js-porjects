@@ -8,12 +8,12 @@ const BorrowButton = () => {
   const router = useRouter();
   const { data: session, isPending } = authClient.useSession();
   const handleBororwButton = () => {
-    if (session) {
-      toast.success('Successfuly Borrow this Book!');
-    } else {
-      router.push('/login');
-    }
+    toast.success('Successfuly Borrow this Book!');
   };
+  if (!session) {
+    router.push('/login')
+  }
+
   return (
     <div>
       <div className="w-full sm:w-auto">

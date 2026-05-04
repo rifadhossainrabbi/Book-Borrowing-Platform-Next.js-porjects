@@ -4,32 +4,31 @@ import Link from 'next/link';
 import NavImage from '../../assets/booknest-logo-navbar.png';
 import { authClient } from '@/app/lib/auth-client';
 import Navlinks from './Navlinks';
-import { usePathname, useRouter } from 'next/navigation';
+// import { usePathname, useRouter } from 'next/navigation';
 
 const Navbar = () => {
-  const pathname = usePathname();
-  const router = useRouter();
+  // const pathname = usePathname();
+  // const router = useRouter();
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
 
-  const handleLogout = async () => {
-    await authClient.signOut({
-      fetchOptions: {
-        onSuccess: () => {
-          const isPrivatePage =
-            pathname.startsWith('/my-profile')
-            || (pathname.startsWith('/all-books/')
-              && pathname !== '/all-books');
+  // const handleLogout = async () => {
+  //   await authClient.signOut({
+  //     fetchOptions: {
+  //       onSuccess: () => {
+  //         const isProfilePage = pathname.startsWith('/my-profile');
+  //         const isBookDetailsPage =
+  //           pathname.startsWith('/all-books/') && pathname !== '/all-books';
 
-          if (isPrivatePage) {
-            router.push('/login');
-          } else {
-            router.refresh();
-          }
-        },
-      },
-    });
-  };
+  //         if (isProfilePage || isBookDetailsPage) {
+  //           router.push('/login');
+  //         } else {
+  //           router.refresh();
+  //         }
+  //       },
+  //     },
+  //   });
+  // };
 
   return (
     <div className="bg-black sticky top-0 z-[100]">
@@ -125,7 +124,7 @@ const Navbar = () => {
               </Link>
 
               <button
-                onClick={handleLogout}
+                onClick={async()=> authClient.signOut()}
                 className="btn btn-xs md:btn-md border border-amber-600 bg-transparent text-amber-600  hover:bg-linear-to-r from-amber-300 to-amber-800 hover:text-white text-sm font-bold">
                 Logout
               </button>
@@ -141,6 +140,6 @@ const Navbar = () => {
       </div>
     </div>
   );
-};
+};;
 
 export default Navbar;
