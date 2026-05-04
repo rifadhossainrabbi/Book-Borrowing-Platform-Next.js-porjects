@@ -40,7 +40,7 @@ const LogInPage = () => {
 
   return (
     <div className="container mx-auto min-h-[80vh] flex justify-center items-center p-4">
-      <div className="p-8 rounded-xl border border-amber-600 shadow-lg w-full max-w-md">
+      <div className="p-8 rounded-xl bg-[#ffb24712] hover:bg-transparent border border-transparent hover:border-amber-500 shadow-lg w-full max-w-md">
         {/* header */}
         <h2 className="text-3xl font-bold text-center mb-6">
           <span className="bg-linear-to-r from-amber-500 to-blue-500 bg-clip-text text-transparent">
