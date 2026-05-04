@@ -25,6 +25,10 @@ const UpdateProfile = () => {
       image: imageValue,
     });
 
+    if (!session) {
+      router.push('/login');
+    }
+
     if (error) {
       toast.error(error.message);
     } else {

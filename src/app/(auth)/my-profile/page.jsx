@@ -34,12 +34,12 @@ const ProfilePage = () => {
 
   return (
     <div className="min-h-screen bg-[#0e0c10] py-8 md:py-12 px-4 sm:px-6">
-      <div className="max-w-md md:max-w-lg mx-auto bg-[#121212] rounded-[2.5rem] overflow-hidden border border-white/5 shadow-2xl">
+      <div className="max-w-md md:max-w-lg mx-auto bg-[#ffb24712] hover:bg-transparent border border-transparent hover:border-amber-500 rounded-[2.5rem] overflow-hidden shadow-2xl">
         {/* Profile header */}
         <div className="px-6 md:px-8 pt-8 pb-6 border-b border-white/5 flex justify-between items-center">
           <div>
             <Link href={'/'}>
-              <button className='hover:cursor-pointer'>
+              <button className="hover:cursor-pointer">
                 <FaArrowLeft />
               </button>
             </Link>
