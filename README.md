@@ -1,22 +1,54 @@
-_______________________Name______________________
-1. This Project Name is BookNest(Book Borrowing Platform).
+# BookNest - Online Book Borrowing Platform
 
----------------------Purpose---------------------
-2. The primary purpose of this project is to modernize the conventional library experience through a seamless digital transformation. It serves as a comprehensive web application that offers book enthusiasts a rich library experience from the comfort of their homes. By integrating secure authentication, real-time book searching, and category-based filtering, the platform aims to make literature more accessible and provide users with an organized, efficient way to manage their digital reading and borrowing journey.
+**BookNest** is a modern, full-stack web application designed to digitize the traditional library experience. Users can explore a vast collection of books, search by title, filter by categories, and borrow their favorite reads digitally.
 
+## 🚀 Live URL
+[View Live Site]
 
---------------------Live URL-----------------------
-Link: https://book-borrowing-platform-next-js-por.vercel.app/
+-https://book-borrowing-platform-next-js-por.vercel.app/
 
+## 🎯 Project Purpose
+The primary goal of BookNest is to provide a seamless and secure platform for book lovers to browse and manage their reading interests online. It bridges the gap between traditional libraries and digital convenience, offering features like secure authentication, real-time book filtering, and personalized user profiles to enhance the overall borrowing journey.
 
----------------------Key Features-------------------
-3. 
-1. Comprehensive Authentication System.
-2. Dynamic Book Discovery & Filtering.
-3. Real-time Search & Filtering.
-4. Seamless Borrowing Experience.
-5. 
+---
 
+## ✨ Key Features
+- **Secure Authentication:** Integrated with
 
--------------------NPM Package----------------------
-SwiperJs is used in this project.
+**BetterAuth** for Email/Password and Google Social Login.
+
+- **Dynamic Search:** Real-time search functionality on the "All Books" page to find books instantly by title.
+
+- **Category Filtering:** Functional sidebar to filter books by categories like Story, Tech, and Science.
+
+- **Private Route Protection:** Advanced **Next.js proxy** to protect user profiles and book details from unauthorized access.
+
+- **Interactive Profile Management:** Users can view their information and update their Name and Photo URL.
+
+- **Engaging UI:** Smooth image sliders using 
+
+**SwiperJS** and a "New Arrivals" scrolling marquee.
+
+- **Fully Responsive:** Optimized design for mobile, tablet, and desktop using **Tailwind CSS** and 
+
+**DaisyUI**.
+- **Real-time Feedback:** Instant user notifications for all actions via **React Hot Toast**.
+
+---
+
+## 🛠️ Technologies & NPM Packages Used
+### Core Technologies:
+- **Next.js** (App Router)
+- **Tailwind CSS**
+- **DisyUI**
+- **MongoDB** (Database)
+- **BetterAuth** (Authentication)
+
+### NPM Packages:
+- `better-auth`: For secure and robust user authentication.
+- `mongodb`: Official driver for database connectivity.
+- `swiper`: For creating the modern hero section image slider.
+- `react-fast-marquee`: For the scrolling "New Arrivals" text.
+- `react-hook-form`: For optimized and validated form handling.
+- `react-hot-toast`: For beautiful, responsive toast notifications.
+- `react-icons`: For a rich set of scalable vector icons.
