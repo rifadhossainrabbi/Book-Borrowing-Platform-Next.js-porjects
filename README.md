@@ -52,3 +52,4 @@ The primary goal of BookNest is to provide a seamless and secure platform for bo
 - `react-hook-form`: For optimized and validated form handling.
 - `react-hot-toast`: For beautiful, responsive toast notifications.
 - `react-icons`: For a rich set of scalable vector icons.
+- `react-type-animation` For text animation
