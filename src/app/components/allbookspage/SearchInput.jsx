@@ -6,33 +6,27 @@ import ButtonCategory from '../shared/ButtonCategory';
 const SearchInput = ({ allBooks, currentCategory }) => {
   const [searchByTitle, setSearchByTitle] = useState('');
 
-  // categoy and search filtering
   const filtered = allBooks.filter((book) => {
-    // categoyr filter
     const matchesCat = currentCategory
       ? book.category.toLowerCase() === currentCategory.toLowerCase()
       : true;
 
-    // input field er text jodi book.title a thake tobe seigulo dekhabe mathchesSearch
     const matchesSearch = book.title
       .toLowerCase()
       .includes(searchByTitle.toLowerCase());
 
-    // duitai return korbe
     return matchesCat && matchesSearch;
   });
 
   return (
     <>
-      {/* search icon and all books */}
-      {/* main div */}
-      <div className="p-4 md:p-8 bg-[#0e0c10] sticky top-12 md:top-0 z-10">
+      {/* Search and mobile category and all books */}
+      <div className="sticky top-0 z-20 bg-[#0e0c10]/95 backdrop-blur-sm px-4 py-3 md:px-8 md:py-6 flex flex-col gap-3 md:gap-4">
+        {/* Search Bar */}
         <div className="relative w-full">
-          {/*search bar */}
           <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-            {/* search icon */}
             <svg
-              className="h-5 w-5 text-gray-500"
+              className="h-4 w-4 md:h-5 md:w-5 text-gray-500"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24">
               <g
@@ -46,32 +40,32 @@ const SearchInput = ({ allBooks, currentCategory }) => {
               </g>
             </svg>
           </div>
-          {/* input label */}
           <input
             type="text"
-            placeholder="Search books by title..."
-            className="w-full bg-zinc-900/50 border border-white/10 text-white pl-12 pr-4 py-3.5 rounded-xl focus:outline-none focus:border-amber-600 transition-all placeholder:text-gray-500"
+            placeholder="Search books..."
+            className="w-full bg-zinc-900/50 border border-white/10 text-white pl-11 pr-4 py-2.5 md:py-3.5 rounded-xl text-sm md:text-base focus:outline-none focus:border-amber-600 transition-all"
             onChange={(e) => setSearchByTitle(e.target.value)}
           />
         </div>
 
-        {/* mobile device er jonno */}
-        <div className="flex flex-col md:hidden w-full md:w-3/12 lg:w-2/12 bg-[#0e0c10] p-5 md:p-6 md:border-r border-white/5 h-auto md:h-full overflow-y-auto">
-          {/* buttons */}
-          <div className="flex">
-            <ButtonCategory category={currentCategory} />
+        {/* button category for mobil device  */}
+        <div className="lg:hidden w-full overflow-x-auto pb-1 scrollbar-hide">
+          <div className="flex flex-row gap-2 items-center min-w-max">
+            <div className="flex flex-row gap-2 transform scale-95 origin-left">
+              <ButtonCategory category={currentCategory} />
+            </div>
           </div>
         </div>
       </div>
 
-      {/* allbooks */}
-      <div className="flex-1 p-4 md:p-8 pt-0">
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+      {/* books card section */}
+      <div className="flex-1 p-4 md:p-8 pt-2">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
           {filtered.length > 0 ? (
             filtered.map((book) => <BooksCard key={book.id} book={book} />)
           ) : (
-            <div className="col-span-full text-center py-20 text-gray-500">
-              <p className="text-xl">No books found matching your search.</p>
+            <div className="col-span-full text-center py-16 text-gray-500">
+              <p className="text-lg">No books found.</p>
             </div>
           )}
         </div>

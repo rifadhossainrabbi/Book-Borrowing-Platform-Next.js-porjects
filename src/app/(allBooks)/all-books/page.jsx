@@ -7,24 +7,19 @@ const AllBooksPage = async ({ searchParams }) => {
   const books = await getBooks();
 
   return (
-    // container div
-    <div className="bg-[#0e0c10]">
-      {/* main container */}
-      <div className="flex flex-col md:flex-row w-full lg:w-10/12 mx-auto md:h-screen md:overflow-hidden scroll-smooth">
-        {/* Category buttons */}
-        {/* mobile device a hidden hobe r md device theke show hobe */}
-        <div className="hidden md:block w-full md:w-3/12 lg:w-2/12 bg-[#0e0c10] p-5 md:p-6 md:border-r border-white/5 h-auto md:h-full">
-          <h1 className="text-xl md:text-2xl font-bold text-white mb-6 border-b border-white/10 pb-4">
+    <div className="bg-[#0e0c10] min-h-screen">
+      <div className="flex flex-col lg:flex-row w-full lg:w-11/12 xl:w-10/12 mx-auto h-full lg:h-screen lg:overflow-hidden">
+        {/* button category */}
+        <div className="hidden lg:block lg:w-3/12 xl:w-2/12 bg-[#0e0c10] p-6 border-r border-white/5 h-full overflow-y-auto">
+          <h1 className="text-2xl font-bold text-white mb-6 border-b border-white/10 pb-4">
             Categories
           </h1>
           <ButtonCategory category={category} />
         </div>
 
-        {/* Search input and all books */}
-        <div className="w-full md:w-9/12 lg:w-10/12 flex flex-col bg-[#0e0c10] md:h-full md:overflow-y-auto">
-          <div className="p-4 md:p-0">
-            <SearchInput allBooks={books} currentCategory={category} />
-          </div>
+        {/* all books and searchbar */}
+        <div className="w-full lg:w-9/12 xl:w-10/12 flex flex-col h-full lg:overflow-y-auto">
+          <SearchInput allBooks={books} currentCategory={category} />
         </div>
       </div>
     </div>

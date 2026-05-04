@@ -7,21 +7,25 @@ import scienceCategory from '../../assets/project-management.png';
 import Image from 'next/image';
 
 const ButtonCategory = ({ category }) => {
-  const commonClass =
-    'border border-amber-600 bg-linear-to-r from-amber-300 via-amber-700 to-amber-800 text-white';
-  const commonClass2 = "btn-outline text-amber-600 border-amber-500";
+  // for better responsive
+  const baseClass =
+    'flex items-center justify-start gap-2 lg:gap-3 px-3 py-1.5 md:px-4 md:py-2.5 lg:px-5 lg:py-3 rounded-lg lg:rounded-xl text-xs md:text-sm lg:text-base font-medium transition-all border';
+
+  const commonClass = `${baseClass} border-amber-600 bg-linear-to-r from-amber-300 via-amber-700 to-amber-800 text-white`;
+  const commonClass2 = `${baseClass} text-amber-600 border-amber-500 hover:bg-amber-600/10`;
+
   return (
-    <div className="flex md:flex-col gap-3">
+    <div className="flex flex-row lg:flex-col gap-2 lg:gap-3 whitespace-nowrap lg:whitespace-normal">
       {/* All Categories */}
       <Link
         href="/all-books"
-        className={`btn flex items-center justify-start gap-3 ${!category ? `${commonClass}` : `${commonClass2}`}`}>
+        className={`${!category ? `${commonClass}` : `${commonClass2}`}`}>
         <Image
           src={allCategory}
           alt="All Category"
           width={24}
           height={24}
-          className="object-contain"
+          className="object-contain w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6"
         />
         <span>All Categories</span>
       </Link>
@@ -29,13 +33,13 @@ const ButtonCategory = ({ category }) => {
       {/* Story */}
       <Link
         href="/all-books?category=story"
-        className={`btn flex items-center justify-start gap-3 ${category === 'story' ? `${commonClass}` : `${commonClass2}`}`}>
+        className={`${category === 'story' ? `${commonClass}` : `${commonClass2}`}`}>
         <Image
           src={storyCategory}
           alt="Story"
           width={24}
           height={24}
-          className="object-contain"
+          className="object-contain w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6"
         />
         <span>Story</span>
       </Link>
@@ -43,13 +47,13 @@ const ButtonCategory = ({ category }) => {
       {/* Tech */}
       <Link
         href="/all-books?category=tech"
-        className={`btn flex items-center justify-start gap-3 ${category === 'tech' ? `${commonClass}` : `${commonClass2}`}`}>
+        className={`${category === 'tech' ? `${commonClass}` : `${commonClass2}`}`}>
         <Image
           src={techCategory}
           alt="Tech"
           width={24}
           height={24}
-          className="object-contain"
+          className="object-contain w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6"
         />
         <span>Tech</span>
       </Link>
@@ -57,13 +61,13 @@ const ButtonCategory = ({ category }) => {
       {/* Science */}
       <Link
         href="/all-books?category=science"
-        className={`btn flex items-center justify-start gap-3 ${category === 'science' ? `${commonClass}` : `${commonClass2}`}`}>
+        className={`${category === 'science' ? `${commonClass}` : `${commonClass2}`}`}>
         <Image
           src={scienceCategory}
           alt="Science"
           width={24}
           height={24}
-          className="object-contain"
+          className="object-contain w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6"
         />
         <span>Science</span>
       </Link>

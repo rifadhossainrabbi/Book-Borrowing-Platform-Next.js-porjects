@@ -35,7 +35,7 @@ const FeaturedBooks = async () => {
         </div>
 
         {/* Books */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 md:px-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 md:px-8">
           {books.slice(0, 4).map((book) => (
             <BooksCard book={book} key={book.id} />
           ))}
