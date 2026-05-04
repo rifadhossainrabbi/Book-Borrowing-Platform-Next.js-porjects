@@ -34,7 +34,7 @@ const RegisterPage = () => {
       toast.error(error.message || 'Registration failed!');
     } else {
       toast.success('Registration successful!');
-      router.push('/');
+      router.push('/login');
     }
   };
 

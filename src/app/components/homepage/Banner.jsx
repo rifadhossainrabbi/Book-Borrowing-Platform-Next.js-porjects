@@ -13,6 +13,7 @@ import bgimage1 from '../../assets/banner-bg.png';
 import bgimage2 from '../../assets/banner-bg-3.avif';
 import bgimage3 from '../../assets/banner-bg-7.webp';
 import bgimage4 from '../../assets/banner-bg-5.jpg';
+import Link from 'next/link';
 
 const robotoslab = Roboto_Slab({
   subsets: ['latin'],
@@ -95,10 +96,12 @@ const Banner = () => {
                       <span className="block h-full w-full rounded-full bg-transparent group-hover:bg-amber-600 transition-all duration-300"></span>
                     </span>
 
-                    <span className="relative flex items-center gap-3 text-amber-500 group-hover:text-white">
-                      Browse Now
-                      <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-500" />
-                    </span>
+                    <Link href={'/all-books'}>
+                      <span className="relative flex items-center gap-3 text-amber-500 group-hover:text-white">
+                        Browse Now
+                        <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-500" />
+                      </span>
+                    </Link>
                   </button>
                 </div>
               </div>

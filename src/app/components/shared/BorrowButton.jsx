@@ -9,10 +9,10 @@ const BorrowButton = () => {
   const { data: session, isPending } = authClient.useSession();
   const handleBororwButton = () => {
     toast.success('Successfuly Borrow this Book!');
+    if (!session) {
+      router.push('/login')
+    }
   };
-  if (!session) {
-    router.push('/login')
-  }
 
   return (
     <div>
