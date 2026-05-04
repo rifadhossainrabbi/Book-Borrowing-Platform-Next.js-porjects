@@ -7,7 +7,7 @@ const BooksCard = ({ book }) => {
   return (
     <div
       key={book.id}
-      className="group rounded-2xl bg-[#111111] border border-gray-800 p-4 flex flex-col h-full hover:border-purple-500 transition-all duration-300 shadow-xl">
+      className="group rounded-2xl bg-[#111111] border border-gray-800 p-4 flex flex-col h-full hover:border-amber-500 transition-all duration-300 shadow-xl">
       {/* book image */}
       <div className="relative w-full aspect-[5/7] overflow-hidden rounded-xl">
         <Image
@@ -38,7 +38,7 @@ const BooksCard = ({ book }) => {
         {/* button */}
         <div className="mt-auto">
           <Link href={`/all-books/${book.id}`} className="block">
-            <button className="flex items-center justify-center gap-2 w-full bg-purple-600 hover:bg-purple-700 text-white text-sm font-bold py-1 md:py-3 rounded-xl transition-all active:scale-95">
+            <button className="flex items-center justify-center gap-2 w-full border border-amber-600 hover:bg-linear-to-r from-amber-300 via-amber-800 to-amber-800 text-white text-sm font-bold py-1 md:py-3 rounded-xl transition-all active:scale-95">
               View Details <FaArrowRight className="text-xs" />
             </button>
           </Link>

@@ -42,7 +42,7 @@ const JoinCommunity = () => {
             </div>
 
             {/* join now button */}
-            <button className="flex items-center gap-2 border border-gray-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-[#141225] transition-all duration-300">
+            <button className="flex items-center gap-2 border border-amber-600 hover:bg-linear-to-r from-amber-300 via-amber-800 to-amber-800 text-amber-600 px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-white transition-all duration-300">
               Join Now <MdOutlineArrowOutward className="text-xl" />
             </button>
           </div>
@@ -52,22 +52,22 @@ const JoinCommunity = () => {
             {/* 4 item grid layout */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-[#1e1a33] p-8 rounded-xl flex flex-col justify-center">
-                <h1 className="text-[#9d7efd] text-4xl font-bold mb-1">12k+</h1>
+                <h1 className="text-[#fdee7e] text-4xl font-bold mb-1">12k+</h1>
                 <p className="text-gray-400 text-sm">Active members</p>
               </div>
 
               <div className="bg-[#1e1a33] p-8 rounded-xl flex flex-col justify-center">
-                <h1 className="text-[#9d7efd] text-4xl font-bold mb-1">4.8k</h1>
+                <h1 className="text-[#fdee7e] text-4xl font-bold mb-1">4.8k</h1>
                 <p className="text-gray-400 text-sm">Books shared</p>
               </div>
 
               <div className="bg-[#1e1a33] p-8 rounded-xl flex flex-col justify-center">
-                <h1 className="text-[#9d7efd] text-4xl font-bold mb-1">320+</h1>
+                <h1 className="text-[#fdee7e] text-4xl font-bold mb-1">320+</h1>
                 <p className="text-gray-400 text-sm">Monthly reviews</p>
               </div>
 
               <div className="bg-[#1e1a33] p-8 rounded-xl flex flex-col justify-center">
-                <h1 className="text-[#9d7efd] text-4xl font-bold mb-1">18</h1>
+                <h1 className="text-[#fdee7e] text-4xl font-bold mb-1">18</h1>
                 <p className="text-gray-400 text-sm">Reading clubs</p>
               </div>
             </div>

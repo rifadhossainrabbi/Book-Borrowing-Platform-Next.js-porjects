@@ -37,7 +37,7 @@ const BecomeMember = () => {
               </div>
 
               {/* Premium Plan Card */}
-              <div className="border-2 border-indigo-600/60 bg-[#1e1b4b]/20 rounded-xl p-5 flex justify-between items-center shadow-lg shadow-indigo-500/5">
+              <div className="border-2 border-amber-800 bg-[#1e1b4b]/20 rounded-xl p-5 flex justify-between items-center shadow-lg shadow-indigo-500/5">
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <h1 className="text-xl font-semibold text-white">
@@ -60,7 +60,7 @@ const BecomeMember = () => {
               </div>
             </div>
 
-            <button className="flex items-center gap-2 w-fit px-8 py-3 border border-slate-700 text-white rounded-xl font-semibold hover:bg-white hover:text-[#060b13] transition-all duration-300 mb-6">
+            <button className="flex items-center gap-2 w-fit px-8 py-3  border border-amber-600 hover:bg-linear-to-r from-amber-300 via-amber-800 to-amber-800 text-amber-600 hover:text-white rounded-xl font-semibold hover:bg-white hover:text-[#060b13] transition-all duration-300 mb-6">
               Learn More <MdOutlineArrowOutward className="text-xl" />
             </button>
 

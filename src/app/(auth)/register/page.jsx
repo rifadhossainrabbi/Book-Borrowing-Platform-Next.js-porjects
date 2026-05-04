@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react'; 
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -19,7 +19,6 @@ const RegisterPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
 
   const handleRegisterFunc = async (data) => {
     const { name, email, password, image } = data;
@@ -47,10 +46,12 @@ const RegisterPage = () => {
 
   return (
     <div className="container mx-auto min-h-[70vh] flex justify-center items-center mt-10 p-4">
-      <div className="p-6 rounded-xl border border-gray-600 w-full max-w-md shadow-md">
+      <div className="p-6 rounded-xl border border-amber-600 w-full max-w-md shadow-md">
         {/* header */}
         <h2 className="text-3xl font-bold text-center mb-6">
-          Register your account
+          <span className="bg-linear-to-r from-amber-500 to-blue-500 bg-clip-text text-transparent">
+            Register your account
+          </span>
         </h2>
 
         <form onSubmit={handleSubmit(handleRegisterFunc)} className="space-y-4">
@@ -59,7 +60,7 @@ const RegisterPage = () => {
             <legend className="fieldset-legend font-semibold">Name</legend>
             <input
               type="text"
-              className={`input w-full ${errors.name ? 'border-red-500' : ''}`}
+              className={`input w-full focus:outline-none focus:border-amber-600 ${errors.name ? 'border-red-500' : ''}`}
               placeholder="Type here Name"
               {...register('name', { required: 'Name is required' })}
             />
@@ -73,7 +74,7 @@ const RegisterPage = () => {
             <legend className="fieldset-legend font-semibold">Email</legend>
             <input
               type="email"
-              className={`input w-full ${errors.email ? 'border-red-500' : ''}`}
+              className={`input w-full focus:outline-none focus:border-amber-600 ${errors.email ? 'border-red-500' : ''}`}
               placeholder="Enter your email"
               {...register('email', {
                 required: 'Email field is required',
@@ -91,7 +92,7 @@ const RegisterPage = () => {
             <legend className="fieldset-legend font-semibold">Photo URL</legend>
             <input
               type="text"
-              className="input w-full"
+              className="input w-full focus:outline-none focus:border-amber-600"
               placeholder="Enter photo URL"
               {...register('image')}
             />
@@ -103,7 +104,7 @@ const RegisterPage = () => {
             <div className="relative">
               <input
                 type={isShowPassword ? 'text' : 'password'}
-                className={`input w-full pr-10 ${errors.password ? 'border-red-500' : ''}`}
+                className={`input w-full pr-10 focus:outline-none focus:border-amber-600 ${errors.password ? 'border-red-500' : ''}`}
                 placeholder="Type here password"
                 {...register('password', {
                   required: 'Password field is required',
@@ -130,7 +131,7 @@ const RegisterPage = () => {
             )}
           </fieldset>
 
-          <button className="btn bg-purple-600 hover:bg-purple-700 text-white w-full h-10 rounded-md border-none text-lg font-bold mt-4 shadow-lg shadow-purple-600/20 flex items-center justify-center transition-all duration-300 active:scale-95">
+          <button className="btn  border border-amber-600 bg-linear-to-r from-amber-300 via-amber-800 to-amber-800 hover:bg-none text-white w-full h-10 rounded-md  text-lg font-bold mt-4 shadow-lg shadow-amber-600/20 flex items-center justify-center transition-all duration-300 active:scale-95">
             Register
           </button>
         </form>

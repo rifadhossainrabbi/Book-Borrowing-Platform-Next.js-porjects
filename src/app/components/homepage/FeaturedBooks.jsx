@@ -27,7 +27,7 @@ const FeaturedBooks = async () => {
             Featured Books
           </h1>
           <Link href={'/all-books'}>
-            <span className="group text-purple-500 hover:text-purple-400 text-sm md:text-xl font-semibold flex items-center gap-2 transition-colors">
+            <span className="group text-amber-500 hover:text-amber-400 text-sm md:text-xl font-semibold flex items-center gap-2 transition-colors">
               View All{' '}
               <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-500" />
             </span>

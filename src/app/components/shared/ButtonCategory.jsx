@@ -7,12 +7,15 @@ import scienceCategory from '../../assets/project-management.png';
 import Image from 'next/image';
 
 const ButtonCategory = ({ category }) => {
+  const commonClass =
+    'border border-amber-600 bg-linear-to-r from-amber-300 via-amber-700 to-amber-800 text-white';
+  const commonClass2 = "btn-outline text-amber-600 border-amber-500";
   return (
     <div className="flex md:flex-col gap-3">
       {/* All Categories */}
       <Link
         href="/all-books"
-        className={`btn flex items-center justify-start gap-3 ${!category ? 'bg-purple-600 text-white' : 'btn-outline border-purple-500'}`}>
+        className={`btn flex items-center justify-start gap-3 ${!category ? `${commonClass}` : `${commonClass2}`}`}>
         <Image
           src={allCategory}
           alt="All Category"
@@ -26,7 +29,7 @@ const ButtonCategory = ({ category }) => {
       {/* Story */}
       <Link
         href="/all-books?category=story"
-        className={`btn flex items-center justify-start gap-3 ${category === 'story' ? 'bg-purple-600 text-white' : 'btn-outline border-purple-500'}`}>
+        className={`btn flex items-center justify-start gap-3 ${category === 'story' ? `${commonClass}` : `${commonClass2}`}`}>
         <Image
           src={storyCategory}
           alt="Story"
@@ -40,7 +43,7 @@ const ButtonCategory = ({ category }) => {
       {/* Tech */}
       <Link
         href="/all-books?category=tech"
-        className={`btn flex items-center justify-start gap-3 ${category === 'tech' ? 'bg-purple-600 text-white' : 'btn-outline border-purple-500'}`}>
+        className={`btn flex items-center justify-start gap-3 ${category === 'tech' ? `${commonClass}` : `${commonClass2}`}`}>
         <Image
           src={techCategory}
           alt="Tech"
@@ -54,7 +57,7 @@ const ButtonCategory = ({ category }) => {
       {/* Science */}
       <Link
         href="/all-books?category=science"
-        className={`btn flex items-center justify-start gap-3 ${category === 'science' ? 'bg-purple-600 text-white' : 'btn-outline border-purple-500'}`}>
+        className={`btn flex items-center justify-start gap-3 ${category === 'science' ? `${commonClass}` : `${commonClass2}`}`}>
         <Image
           src={scienceCategory}
           alt="Science"

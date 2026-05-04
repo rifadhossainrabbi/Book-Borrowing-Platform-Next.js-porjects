@@ -50,7 +50,7 @@ const SearchInput = ({ allBooks, currentCategory }) => {
           <input
             type="text"
             placeholder="Search books by title..."
-            className="w-full bg-zinc-900/50 border border-white/10 text-white pl-12 pr-4 py-3.5 rounded-xl focus:outline-none focus:border-purple-600 transition-all placeholder:text-gray-500"
+            className="w-full bg-zinc-900/50 border border-white/10 text-white pl-12 pr-4 py-3.5 rounded-xl focus:outline-none focus:border-amber-600 transition-all placeholder:text-gray-500"
             onChange={(e) => setSearchByTitle(e.target.value)}
           />
         </div>

@@ -17,30 +17,32 @@ const BookDetails = async ({ params }) => {
 
   return (
     // container div
-    <div className="min-h-screen bg-[#0e0c10] px-4 sm:px-6 py-10 md:py-20 text-white">
+    <div className="min-h-screen bg-[#0e0c10] px-4 sm:px-6 py-10 md:py-20 text-white flex flex-col justify-center">
       {/* main div */}
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto w-full">
         {/* back button to all books page */}
         <Link href="/all-books">
-          <button className="mb-8 md:mb-12 flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-300 font-medium text-sm md:text-base">
+          <button className="mb-8 md:mb-12 flex items-center gap-2 text-amber-400 hover:text-white transition-colors duration-300 font-medium text-sm md:text-base">
             <span className="text-xl">←</span> Back to All Books
           </button>
         </Link>
 
         {/* 2 column layout (book image and info) */}
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-8 md:gap-12 lg:gap-24 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-8 md:gap-12 lg:gap-24 items-stretch">
           {/* left side image section */}
           <div className="w-full flex justify-center md:justify-start col-span-1 md:col-span-2">
-            <div className="w-full max-w-[280px] sm:max-w-sm md:max-w-none rounded-2xl overflow-hidden shadow-2xl shadow-black/50">
+            <div className="w-full h-full max-w-[300px] sm:max-w-sm md:max-w-none rounded-2xl overflow-hidden shadow-2xl shadow-black/50">
               <BookImage src={book.image_url} alt={book.title} />
             </div>
           </div>
 
           {/* right side book info */}
-          <div className="flex flex-col space-y-5 md:space-y-6 pt-2 col-span-1 md:col-span-4 text-center md:text-left">
+          <div className="flex flex-col space-y-5 md:space-y-5 col-span-1 md:col-span-4 text-center md:text-left h-full justify-center">
             <div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
-                {book.title}
+                <span className="bg-linear-to-r from-amber-500 to-blue-500 bg-clip-text text-transparent">
+                  {book.title}
+                </span>
               </h1>
               <p className="mt-2 text-lg md:text-xl text-gray-400 font-medium">
                 {book.author}
@@ -72,7 +74,7 @@ const BookDetails = async ({ params }) => {
 
               {/* button - modified with glow and hover effect */}
               <div className="w-full sm:w-auto">
-                <button className="w-full sm:w-auto px-10 h-14 rounded-xl bg-transparent border border-purple-600 text-white font-bold text-lg transition-all duration-300 hover:bg-purple-700 hover:shadow-[0_0_25px_rgba(147,51,234,0.4)] active:scale-95 shadow-lg shadow-purple-600/20">
+                <button className="w-full sm:w-auto px-10 h-14 rounded-xl bg-transparent border border-amber-600 hover:bg-linear-to-r from-amber-300 via-amber-800 to-amber-800 text-amber-600 font-bold text-lg transition-all duration-300  active:scale-95 shadow-lg shadow-amber-600/20">
                   Borrow This Book
                 </button>
               </div>

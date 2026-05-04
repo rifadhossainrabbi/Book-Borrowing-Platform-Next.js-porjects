@@ -105,7 +105,7 @@ const ProfilePage = () => {
             {/* Modal main button */}
             <label
               htmlFor="update_info_modal"
-              className="btn bg-purple-600 hover:bg-purple-700 text-white w-full h-14 rounded-2xl border-none text-lg font-bold mt-8 shadow-lg shadow-purple-600/20 cursor-pointer flex items-center justify-center transition-all duration-300 active:scale-95">
+              className="btn  border border-amber-600 hover:bg-linear-to-r from-amber-300 via-amber-800 to-amber-800 text-amber-600 hover:text-white w-full h-14 rounded-2xl text-lg font-bold mt-8 shadow-lg shadow-amber-600/20 cursor-pointer flex items-center justify-center transition-all duration-300 active:scale-95">
               Update Information
             </label>
 

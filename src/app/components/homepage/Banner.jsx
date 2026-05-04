@@ -44,7 +44,7 @@ const Banner = () => {
     <div className="bg-black">
       {/* main container */}
       <div className="relative container mx-auto overflow-hidden min-h-fit md:h-[70vh]">
-       {/* background image slider */}
+        {/* background image slider */}
         <div className="absolute inset-0 z-0">
           <Swiper
             modules={[Autoplay, EffectFade]}
@@ -78,9 +78,9 @@ const Banner = () => {
             {/* left side text */}
             <div className="w-full md:w-3/5 text-center md:text-left space-y-6">
               <h1
-                className={`text-4xl md:text-7xl font-bold text-white leading-tight drop-shadow-2xl ${robotoslab.className}`}>
+                className={`text-4xl md:text-7xl font-bold text-white/60 leading-tight drop-shadow-2xl ${robotoslab.className}`}>
                 Find Your <br />
-                <span className="bg-gradient-to-r from-purple-400 to-blue-300 bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-amber-500 to-blue-500 bg-clip-text text-transparent">
                   Next Read
                 </span>
               </h1>
@@ -89,13 +89,18 @@ const Banner = () => {
                 borrow your favorite ones.
               </p>
               <div className="flex flex-wrap gap-4 justify-center md:justify-start pt-4">
-                <button className="group flex items-center gap-3 bg-transparent border-2 border-purple-600 text-purple-500 hover:bg-purple-600 hover:text-white px-10 h-14 rounded-full font-bold text-lg transition-all duration-300">
-                  Browse Now
-                  <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-500" />
-                </button>
-                <button className="bg-black/40 backdrop-blur-sm border border-white/40 hover:bg-white/20 text-white font-bold py-3 px-10 h-14 rounded-full transition-all">
-                  Learn More
-                </button>
+                <div className="inline-block p-[2px] rounded-full bg-linear-to-r from-amber-500 to-blue-500">
+                  <button className="group relative flex items-center gap-3 px-10 h-14 rounded-full font-bold text-lg text-white bg-black">
+                    <span className="absolute inset-0 rounded-full p-[1px] bg-gredient-to-r from-amber-500 to-blue-500">
+                      <span className="block h-full w-full rounded-full bg-transparent group-hover:bg-amber-600 transition-all duration-300"></span>
+                    </span>
+
+                    <span className="relative flex items-center gap-3 text-amber-500 group-hover:text-white">
+                      Browse Now
+                      <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-500" />
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
 

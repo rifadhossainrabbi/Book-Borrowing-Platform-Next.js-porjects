@@ -13,7 +13,7 @@ const Navlinks = ({ href, children }) => {
     // Navbar er Active design korar jonno eita banano hoyase
     <Link
       href={href}
-      className={`${isActive && 'border-b-2 border-purple-500 text-fuchsia-500'}`}>
+      className={`${isActive && 'border-b-2 border-amber-600 text-amber-500'}`}>
       {children}
     </Link>
   );
