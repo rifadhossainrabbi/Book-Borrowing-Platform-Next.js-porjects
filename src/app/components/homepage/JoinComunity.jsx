@@ -69,7 +69,7 @@ const JoinCommunity = () => {
               <div className="bg-[#1e1a33] p-8 rounded-xl flex flex-col justify-center">
                 <h1 className="text-[#fdee7e] text-4xl font-bold mb-1">18</h1>
                 <p className="text-gray-400 text-sm">Reading
-                  Clubs</p>
+                  clubs</p>
               </div>
             </div>
           </div>
