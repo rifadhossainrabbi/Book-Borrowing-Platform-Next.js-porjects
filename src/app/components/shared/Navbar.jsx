@@ -4,11 +4,11 @@ import Link from 'next/link';
 import NavImage from '../../assets/booknest-logo-navbar.png';
 import { authClient } from '@/app/lib/auth-client';
 import Navlinks from './Navlinks';
-import { usePathname, useRouter } from 'next/navigation'; 
+import { usePathname, useRouter } from 'next/navigation';
 
 const Navbar = () => {
-  const pathname = usePathname(); 
-  const router = useRouter(); 
+  const pathname = usePathname();
+  const router = useRouter();
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
 
@@ -16,10 +16,10 @@ const Navbar = () => {
     await authClient.signOut({
       fetchOptions: {
         onSuccess: () => {
-          const privatePaths = ['/my-profile', '/all-books/:path*'];
-          const isPrivatePage = privatePaths.some((path) =>
-            pathname.startsWith(path),
-          );
+          const isPrivatePage =
+            pathname.startsWith('/my-profile')
+            || (pathname.startsWith('/all-books/')
+              && pathname !== '/all-books');
 
           if (isPrivatePage) {
             router.push('/login');
@@ -125,7 +125,7 @@ const Navbar = () => {
               </Link>
 
               <button
-                onClick={handleLogout} 
+                onClick={handleLogout}
                 className="btn btn-xs md:btn-md bg-[#6335c6] hover:bg-[#6c3bd7] border-none text-white text-sm font-bold">
                 Logout
               </button>
