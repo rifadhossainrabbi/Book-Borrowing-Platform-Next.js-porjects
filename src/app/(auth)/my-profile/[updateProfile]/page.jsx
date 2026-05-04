@@ -13,9 +13,6 @@ const UpdateProfile = () => {
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
 
-  if (!session) {
-    router.push('/login');
-  }
   const handleUpdate = async (e) => {
     e.preventDefault();
     setLoading(true);
