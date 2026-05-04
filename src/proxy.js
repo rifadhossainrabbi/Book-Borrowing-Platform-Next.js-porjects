@@ -2,8 +2,8 @@ import dns from 'node:dns';
 dns.setServers(['8.8.8.8', '8.8.4.4']);
 
 import { NextResponse } from 'next/server';
-import { auth } from './lib/auth';
 import { headers } from 'next/headers';
+import { auth } from './app/lib/auth';
 
 export async function proxy(request) {
   console.log('Message from Proxy');
@@ -18,5 +18,5 @@ export async function proxy(request) {
 }
 
 export const config = {
-  matcher: ['/all-books/:path', '/my-profile'],
+  matcher: ['/all-books/:path*', '/my-profile'],
 };

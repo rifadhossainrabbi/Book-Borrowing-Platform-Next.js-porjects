@@ -106,7 +106,7 @@ const Navbar = () => {
 
               <Link href={'/my-profile'}>
                 <div className="avatar">
-                  <div className="w-8 md:w-10 rounded-full ring ring-[#6335c6] flex items-center justify-center bg-[#6335c6] text-white overflow-hidden">
+                  <div className="w-8 md:w-10 rounded-full ring ring-[#c6a635] flex items-center justify-center bg-[#c69335] text-white overflow-hidden">
                     {user?.image ? (
                       <Image
                         src={user?.image}

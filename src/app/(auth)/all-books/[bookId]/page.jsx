@@ -1,8 +1,10 @@
 import BookImage from '@/app/components/allbookspage/BookImage';
+import BorrowButton from '@/app/components/shared/BorrowButton';
 import { getBooks } from '@/app/lib/data';
 import Link from 'next/link';
 
 const BookDetails = async ({ params }) => {
+   
   const { bookId } = await params;
   const books = await getBooks();
   const book = books.find((b) => b.id == Number(bookId));
@@ -73,11 +75,7 @@ const BookDetails = async ({ params }) => {
               </div>
 
               {/* button - modified with glow and hover effect */}
-              <div className="w-full sm:w-auto">
-                <button className="w-full sm:w-auto px-10 h-14 rounded-xl bg-transparent border border-amber-600 hover:bg-linear-to-r from-amber-300 via-amber-800 to-amber-800 text-amber-600 font-bold text-lg transition-all duration-300  active:scale-95 shadow-lg shadow-amber-600/20">
-                  Borrow This Book
-                </button>
-              </div>
+              <BorrowButton/>
             </div>
           </div>
         </div>
