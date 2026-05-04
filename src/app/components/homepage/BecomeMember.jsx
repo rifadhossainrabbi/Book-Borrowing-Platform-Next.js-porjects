@@ -48,7 +48,7 @@ const BecomeMember = () => {
                     </span>
                   </div>
                   <p className="text-slate-400 text-sm font-medium">
-                    Unlimited borrows + early access
+                    Unlimited Borrows + early access
                   </p>
                 </div>
                 <div className="text-right">
