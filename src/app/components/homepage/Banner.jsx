@@ -78,7 +78,7 @@ const Banner = () => {
               <h1
                 className={`text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white/60 leading-tight drop-shadow-2xl ${robotoslab.className}`}>
                 Find Your <br />
-                <span className="bg-linear-to-r from-amber-500 to-blue-500 bg-clip-text text-transparent block whitespace-nowrap min-h-[1.2em]">
+                <span className="block whitespace-nowrap min-h-[1.2em]">
                   <TypeAnimation
                     sequence={[
                       'Next Read',
@@ -94,8 +94,8 @@ const Banner = () => {
                     ]}
                     wrapper="span"
                     speed={50}
-                    style={{ display: 'inline-block' }}
                     repeat={Infinity}
+                    className="bg-linear-to-r from-amber-500 to-blue-500 bg-clip-text text-transparent inline-block"
                   />
                 </span>
               </h1>
