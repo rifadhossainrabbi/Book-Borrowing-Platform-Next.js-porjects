@@ -7,7 +7,7 @@ const BooksCard = ({ book }) => {
   return (
     <div
       key={book.id}
-      className="group rounded-2xl bg-[#111111] border border-gray-800 p-4 flex flex-col h-full hover:border-purple-500/40 transition-all duration-300 shadow-xl">
+      className="group rounded-2xl bg-[#111111] border border-gray-800 p-4 flex flex-col h-full hover:border-purple-500 transition-all duration-300 shadow-xl">
       {/* book image */}
       <div className="relative w-full aspect-[5/7] overflow-hidden rounded-xl">
         <Image

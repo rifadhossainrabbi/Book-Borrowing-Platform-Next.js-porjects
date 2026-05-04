@@ -11,7 +11,7 @@ const news = [
 const NewBooksMarquee = () => {
   return (
     <div className="bg-[#1a1c31] w-full">
-      <div className="flex justify-between items-center gap-2 md:gap-4 py-2 md:py-3 w-full md:w-10/12 mx-auto shadow-sm">
+      <div className="flex justify-between items-center gap-2 md:gap-4 py-2 md:py-3 w-full md:container mx-auto shadow-sm">
         <button className="btn text-white text-sm sm:text-lg md:text-xl font-bold min-h-0 h-auto bg-transparent">
           🎉New Arrivals:
         </button>

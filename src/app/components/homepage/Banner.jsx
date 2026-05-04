@@ -1,19 +1,27 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight, FaStar } from 'react-icons/fa';
 import { Roboto_Slab } from 'next/font/google';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectCards } from 'swiper/modules';
+import { Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/effect-cards';
+import 'swiper/css/effect-fade';
+
+// images
+import bgimage1 from '../../assets/banner-bg.png';
+import bgimage2 from '../../assets/banner-bg-3.avif';
+import bgimage3 from '../../assets/banner-bg-7.webp';
+import bgimage4 from '../../assets/banner-bg-5.jpg';
 
 const robotoslab = Roboto_Slab({
   subsets: ['latin'],
 });
 
 const Banner = () => {
-  const [friends, setFriends] = useState([]);
+  const bgImages = [bgimage1, bgimage2, bgimage3, bgimage4];
+
+  const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -24,7 +32,7 @@ const Banner = () => {
       const data = await res.json();
 
       setTimeout(() => {
-        setFriends(data);
+        setBooks(data);
         setLoading(false);
       }, 500);
     };
@@ -32,74 +40,102 @@ const Banner = () => {
   }, []);
 
   return (
-    // main div
-    <div className="bg-[#0e0c10] overflow-hidden w-full">
-      <div className="container mx-auto px-4 md:px-8">
+    // parent div
+    <div className="bg-black">
+      {/* main container */}
+      <div className="relative container mx-auto overflow-hidden min-h-fit md:h-[70vh]">
+       {/* background image slider */}
+        <div className="absolute inset-0 z-0">
+          <Swiper
+            modules={[Autoplay, EffectFade]}
+            effect={'fade'}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            className="w-full h-full">
+            {bgImages.map((img, index) => (
+              <SwiperSlide key={index} className="w-full h-full">
+                <div className="relative w-full h-full">
+                  <Image
+                    src={img}
+                    alt={`Slide ${index}`}
+                    fill
+                    className="object-cover"
+                    priority={index === 0}
+                  />
+                  <div className="absolute inset-0 bg-linear-to-r from-black/60 via-transparent to-transparent" />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
 
-        {/* child div */}
-        <div className="min-h-fit md:min-h-[70vh] flex flex-col md:flex-row items-center justify-between gap-12 py-12 md:py-20 relative">
-          {/* left side text section*/}
-          <div className="space-y-6 text-white w-full md:w-3/5 z-10 text-center md:text-left">
-            <p className="border border-purple-600 bg-transparent text-purple-500 inline-block px-4 py-1.5 rounded-lg font-bold uppercase text-sm tracking-widest">
-              Discover. Borrow. Enjoy.
-            </p>
-
-            <h1
-              className={`text-4xl sm:text-6xl md:text-7xl font-bold leading-[1.1] ${robotoslab.className}`}>
-              Find Your <br />
-              <span className="bg-linear-to-r from-purple-500 to-blue-400 bg-clip-text text-transparent">
-                Next Read
-              </span>
-            </h1>
-
-            <p className="text-gray-300 text-lg md:text-xl max-w-lg leading-relaxed mx-auto md:mx-0 px-4 md:px-0">
-              Explore thousands of books across Story, Tech, and Science. Check
-              out our newest arrivals and start your journey!
-            </p>
-
-            <div className="pt-4 flex justify-center md:justify-start">
-              <button className="group flex items-center gap-3 bg-transparent border-2 border-purple-600 text-purple-500 hover:bg-purple-600 hover:text-white px-10 h-14 rounded-full font-bold text-lg transition-all duration-300">
-                Browse Now
-                <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-500" />
-              </button>
-            </div>
-          </div>
-
-          {/* right side image swiper section */}
-          <div className="w-full md:w-2/5 flex justify-center z-10">
-            {loading ? (
-              <div className="w-[260px] h-[360px] bg-zinc-900 animate-pulse rounded-3xl border border-zinc-800 flex items-center justify-center">
-                <span className="text-zinc-600 font-medium">
-                  Loading Books...
+        {/* text content section */}
+        <div className="container mx-auto px-6 md:px-12 relative z-10 h-full">
+          <div className="min-h-fit md:h-full flex flex-col md:flex-row items-center justify-between gap-10 py-16">
+            {/* left side text */}
+            <div className="w-full md:w-3/5 text-center md:text-left space-y-6">
+              <h1
+                className={`text-4xl md:text-7xl font-bold text-white leading-tight drop-shadow-2xl ${robotoslab.className}`}>
+                Find Your <br />
+                <span className="bg-gradient-to-r from-purple-400 to-blue-300 bg-clip-text text-transparent">
+                  Next Read
                 </span>
+              </h1>
+              <p className="text-white text-lg md:text-xl max-w-lg leading-relaxed drop-shadow-md">
+                Explore thousands of books across different categories and
+                borrow your favorite ones.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center md:justify-start pt-4">
+                <button className="group flex items-center gap-3 bg-transparent border-2 border-purple-600 text-purple-500 hover:bg-purple-600 hover:text-white px-10 h-14 rounded-full font-bold text-lg transition-all duration-300">
+                  Browse Now
+                  <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-500" />
+                </button>
+                <button className="bg-black/40 backdrop-blur-sm border border-white/40 hover:bg-white/20 text-white font-bold py-3 px-10 h-14 rounded-full transition-all">
+                  Learn More
+                </button>
               </div>
-            ) : (
-              <div className="relative">
-                <Swiper
-                  effect={'cards'}
-                  grabCursor={true}
-                  modules={[Autoplay, EffectCards]}
-                  autoplay={{
-                    delay: 3000,
-                    disableOnInteraction: false,
-                  }}
-                  className="w-[260px] h-[360px] md:w-[300px] md:h-[400px]">
-                  {friends.slice(0, 6).map((book) => (
-                    <SwiperSlide
-                      key={book.id}
-                      className="rounded-2xl shadow-2xl bg-zinc-900 overflow-hidden">
+            </div>
+
+            {/* right side pick card */}
+            <div className="w-full md:w-auto flex justify-center">
+              {!loading && books.length > 0 ? (
+                <div className="bg-black/60 backdrop-blur-lg p-6 rounded-2xl border border-white/20 w-full max-w-[380px] shadow-2xl">
+                  <p className="text-gray-300 text-[10px] uppercase tracking-[3px] mb-4 font-bold">
+                    Today's Pick
+                  </p>
+                  <div className="flex gap-4">
+                    <div className="relative w-24 h-36 flex-shrink-0">
                       <Image
-                        src={book.image_url}
-                        alt={book.title}
+                        src={books[0].image_url}
+                        alt="book"
                         fill
-                        className="object-cover"
-                        priority
+                        className="object-cover rounded shadow-lg"
                       />
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              </div>
-            )}
+                    </div>
+                    <div className="flex flex-col justify-center">
+                      <h3 className="text-white font-bold text-lg leading-tight line-clamp-2">
+                        {books[0].title}
+                      </h3>
+                      <p className="text-gray-400 text-sm mt-1">
+                        {books[0].author}
+                      </p>
+                      <div className="flex items-center gap-1 mt-3 text-[#f3a847]">
+                        <FaStar size={12} />
+                        <FaStar size={12} />
+                        <FaStar size={12} />
+                        <FaStar size={12} />
+                        <span className="text-white text-xs ml-2">4.8</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="w-[300px] h-44 bg-white/10 animate-pulse rounded-2xl" />
+              )}
+            </div>
           </div>
         </div>
       </div>
