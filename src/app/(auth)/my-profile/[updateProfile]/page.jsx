@@ -13,6 +13,9 @@ const UpdateProfile = () => {
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
 
+  if (!session) {
+    router.push('/login');
+  }
   const handleUpdate = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -25,9 +28,6 @@ const UpdateProfile = () => {
       image: imageValue,
     });
 
-    if (!session) {
-      router.push('/login');
-    }
 
     if (error) {
       toast.error(error.message);
